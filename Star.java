@@ -77,3 +77,18 @@ public class Star extends CelestialBody {
         System.out.println("Spectral Class: " + classifyStar());
     }
 }
+
+   public String classifyLuminosity() {
+    if (luminosity >= 30000)
+        return "I (Supergiant)";
+    else if (luminosity >= 1000)
+        return "II (Bright Giant)";
+    else if (luminosity >= 100)
+        return "III (Giant)";
+    else if (luminosity >= 10)
+        return "IV (Subgiant)";
+    else if (luminosity >= 0.01)
+        return "V (Main-sequence)";
+    else return "VII (White Dwarf)";
+}
+

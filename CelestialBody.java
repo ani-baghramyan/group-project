@@ -16,6 +16,13 @@ public abstract class CelestialBody {
     public double getDistanceFromEarth() {
         return distanceFromEarth;
     }
+    
+    public double getMass(){
+        return mass;
+    }
 
+    public double getTemperature(){
+        return temperature;
+    }
     public abstract void displayInfo();
 }

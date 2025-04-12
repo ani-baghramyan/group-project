@@ -3,12 +3,14 @@ public abstract class CelestialBody {
     private double distanceFromEarth; 
     private double mass;
     private double temperature;
+    private String type;
 
-    public CelestialBody(String name, double distanceFromEarth, double name, double temperature) {
+    public CelestialBody(String name, double distanceFromEarth, double name, double temperature, String type) {
         this.name = name;
         this.distanceFromEarth = distanceFromEarth;
         this.mass = mass;
         this.temperature = temperature;
+        this.type = type;
         
     }
     
@@ -17,6 +19,7 @@ public abstract class CelestialBody {
         this.distanceFromEarth = that.distanceFromEarth;
         this.mass = that.mass;
         this.temperature = that.temperature;
+        this.type = that.type;
     }
 
     public String getName() {
@@ -34,5 +37,10 @@ public abstract class CelestialBody {
     public double getTemperature(){
         return temperature;
     }
+
+    public String getType() {
+        return type;
+    }
+    
     public abstract void displayInfo();
 }

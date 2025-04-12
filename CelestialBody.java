@@ -1,6 +1,6 @@
 public abstract class CelestialBody {
-    protected String name;
-    protected double distanceFromEarth; 
+    private String name;
+    private double distanceFromEarth; 
     private double mass;
     private double temperature;
 

@@ -1,4 +1,4 @@
-public class Planet extends CelestialBody implements Comparable{
+public class Planet extends CelestialBody{
   private String atmosphericComposition;
   private int numberOfMoons;
   private String surfaceConditions;
@@ -58,13 +58,4 @@ public class Planet extends CelestialBody implements Comparable{
     }    
   }
   
-  public int compareTo(Object other){
-    Planet otherPlanet = (Planet) other;
-    if (getMass() > otherPlanet.getMass())
-      return 1;
-    else if (getMass() < otherPlanet.getMass())
-      return -1;
-    else 
-      return 0;
-  } 
 }

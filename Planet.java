@@ -5,7 +5,7 @@ public class Planet extends CelestialBody implements Comparable{
 
   public Planet(String name, double distanceFromEarth, double mass, double temperature, String type,
                 String atmosphericComposition, int numberOfMoons, String surfaceConditions){
-    super(name, distanceFromEarth, mass, temperature);
+    super(name, distanceFromEarth, mass, temperature, type);
     this.atmosphericComposition = atmosphericComposition;
     this.numberOfMoons = numberOfMoons;
     this.surfaceConditions = surfaceConditions;
@@ -47,7 +47,7 @@ public class Planet extends CelestialBody implements Comparable{
   }
   
   public boolean equals(Object otherObject){
-    if (otherObject = null)
+    if (otherObject == null)
       return false;
     else if (getClass != otherObject.getClass)
       return false;

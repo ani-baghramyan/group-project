@@ -59,7 +59,6 @@ public class Planet extends CelestialBody{
       return false;
     else if (getClass != otherObject.getClass)
       return false;
-    
     else {
       Planet otherPlanet = (Planet) otherObject;
       return getName().equals(otherObject.getName); 
@@ -89,7 +88,6 @@ public class Planet extends CelestialBody{
        return "Multi-Mooned";
      else
        return "Satellite Swarm";
-}
-
+   }
   
 }

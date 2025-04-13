@@ -1,5 +1,4 @@
 public class Galaxy extends CelestialBody {
-    private String type;
     private long numberOfStars;
     private double diameter;
     private int age;
@@ -7,10 +6,10 @@ public class Galaxy extends CelestialBody {
     private Star[] stars;
     private Planet[] planets;
 
-    public Galaxy(String name, double distanceFromEarth, String type, long numberOfStars, double diameter, int age,
+    public Galaxy(String name, double distanceFromEarth, double mass, double temperature, String type,
+                  long numberOfStars, double diameter, int age,
                   Star[] stars, Planet[] planets) {
-        super(name, distanceFromEarth);
-        this.type = type;
+        super(name, distanceFromEarth, mass, temperature, type);
         this.numberOfStars = numberOfStars;
         this.diameter = diameter;
         this.age = age;
@@ -20,19 +19,19 @@ public class Galaxy extends CelestialBody {
 
     public void displayInfo() {
         System.out.println("\n--- Galaxy Information ---");
-        System.out.println("Galaxy Name: " + name);
-        System.out.println("Type: " + type);
+        System.out.println("Galaxy Name: " + getName());
+        System.out.println("Type: " + getType());
         System.out.println("Age: " + age + " billion years");
         System.out.println("Diameter: " + diameter + " light years");
-        System.out.println("Distance from Earth: " + distanceFromEarth + " million light years");
+        System.out.println("Distance from Earth: " + getDistanceFromEarth() + " million light years");
         System.out.println("Estimated Number of Stars: " + numberOfStars);
 
         System.out.println("\nStars in this galaxy:");
         if (stars.length == 0) {
             System.out.println(" - No stars listed.");
         } else {
-            for (int i = 0; i < stars.length; i++) {
-                System.out.println(" - " + stars[i].getName());
+            for (Star star : stars) {
+                System.out.println(" - " + star.getName());
             }
         }
 
@@ -40,25 +39,25 @@ public class Galaxy extends CelestialBody {
         if (planets.length == 0) {
             System.out.println(" - No planets listed.");
         } else {
-            for (int i = 0; i < planets.length; i++) {
-                System.out.println(" - " + planets[i].getName());
+            for (Planet planet : planets) {
+                System.out.println(" - " + planet.getName());
             }
         }
     }
 
     public Star findStarByName(String starName) {
-        for (int i = 0; i < stars.length; i++) {
-            if (stars[i].getName().equalsIgnoreCase(starName)) {
-                return stars[i];
+        for (Star star : stars) {
+            if (star.getName().equalsIgnoreCase(starName)) {
+                return star;
             }
         }
         return null;
     }
 
     public Planet findPlanetByName(String planetName) {
-        for (int i = 0; i < planets.length; i++) {
-            if (planets[i].getName().equalsIgnoreCase(planetName)) {
-                return planets[i];
+        for (Planet planet : planets) {
+            if (planet.getName().equalsIgnoreCase(planetName)) {
+                return planet;
             }
         }
         return null;

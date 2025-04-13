@@ -103,3 +103,15 @@ public class Star extends CelestialBody {
     else return "VII (White Dwarf)";
 }
 
+    public String getLifeStage() {
+    if (mass < 0.08)
+        return "Brown Dwarf (Failed Star)";
+    else if (mass < 0.5)
+        return "Main Sequence (Low Mass)";
+    else if (mass <= 8)
+        return "Main Sequence";
+    else
+        return "High-Mass Star (Short Lifespan)";
+}
+
+

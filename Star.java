@@ -58,25 +58,35 @@ public class Star extends CelestialBody {
 
     public String classifyStar() {
         if (temperature >= 30000) return "O-type";
-        else if (temperature >= 10000) return "B-type";
-        else if (temperature >= 7500) return "A-type";
-        else if (temperature >= 6000) return "F-type";
-        else if (temperature >= 5200) return "G-type";
-        else if (temperature >= 3700) return "K-type";
+        else if (temperature >= 10000) 
+            return "B-type";
+        else if (temperature >= 7500) 
+            return "A-type";
+        else if (temperature >= 6000) 
+            return "F-type";
+        else if (temperature >= 5200) 
+            return "G-type";
+        else if (temperature >= 3700) 
+            return "K-type";
         else return "M-type";
     }
   
-    public void displayInfo() {
-        System.out.println("Star: " + name);
-        System.out.println("Distance from Earth: " + distanceFromEarth + " light years");
-        System.out.println("Temperature: " + temperature + " K");
-        System.out.println("Mass: " + mass + " solar masses");
-        System.out.println("Color: " + color);
-        System.out.println("Luminosity: " + luminosity + " solar luminosities");
-        System.out.println("Size: " + size + " solar radii");
-        System.out.println("Spectral Class: " + classifyStar());
+   @Override
+    public String toString() {
+        return "Star: " + name + "\n" +
+               "Distance from Earth: " + distanceFromEarth + " light years\n" +
+               "Temperature: " + temperature + " K\n" +
+               "Mass: " + mass + " solar masses\n" +
+               "Color: " + color + "\n" +
+               "Luminosity: " + luminosity + " solar luminosities\n" +
+               "Size: " + size + " solar radii\n" +
+               "Spectral Class: " + classifyStar();
     }
-}
+
+   public void displayInfo(){
+       System.out.println("\n---Star Information ---");
+       System.out.println(toString());
+   }
 
    public String classifyLuminosity() {
     if (luminosity >= 30000)

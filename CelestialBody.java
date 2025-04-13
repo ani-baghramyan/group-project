@@ -1,4 +1,4 @@
-public abstract class CelestialBody {
+public abstract class CelestialBody implements Comparable{
     private String name;
     private double distanceFromEarth; 
     private double mass;
@@ -43,4 +43,38 @@ public abstract class CelestialBody {
     }
     
     public abstract void displayInfo();
+
+    public int compareTo(Object other){
+        CelesrialBody otherCelestialBody = (CelesrialBody) other;
+        return name.compareToIgnoreCase(other.name);
+    }
+    
+    public int compareByMass(CelestialBody other){
+        CelestialBody otherCelestialBody = (CelestialBody) other;
+        if (mass > other.mass)
+          return 1;
+        else if (mass < other.mass)
+          return -1;
+        else 
+          return 0;
+  `} 
+    
+   public int compareByTemperature(CelestialBody other) {
+        if (temperature > other.temperature)
+            return 1;
+        else if (temperature < other.temperature)
+            return -1;
+        else
+            return 0;
+   }
+
+   public int compareByDistanceFromEarth(CelestialBody other) {
+        if (distanceFromEarth > other.distanceFromEarth)
+            return 1;
+        else if (distanceFromEarth < other.distanceFromEarth)
+            return -1;
+        else
+            return 0;
+   }
+         
 }

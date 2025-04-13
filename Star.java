@@ -122,6 +122,11 @@ public class Star extends CelestialBody {
         return orbitDistanceAU >= 0.95 && orbitDistanceAU <= 1.37 && classifyStar().equals("G-type");
 }
 
+    public double estimateMainSequenceLifespan() {
+        return 10 * (1 / Math.pow(mass, 2.5)); 
+}
+
+
 
 
 

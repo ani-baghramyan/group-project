@@ -75,6 +75,7 @@ public class Star extends CelestialBody {
     public String toString() {
         return "Star: " + name + "\n" +
                "Distance from Earth: " + distanceFromEarth + " light years\n" +
+               "Type: " + type + "\n" +
                "Temperature: " + temperature + " K\n" +
                "Mass: " + mass + " solar masses\n" +
                "Color: " + color + "\n" +

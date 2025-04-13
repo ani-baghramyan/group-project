@@ -114,4 +114,9 @@ public class Star extends CelestialBody {
         return "High-Mass Star (Short Lifespan)";
 }
 
+    public double calculateAbsoluteMagnitude() {
+        return 4.83 - 2.5 * Math.log10(luminosity);
+}
+
+
 

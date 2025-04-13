@@ -118,5 +118,10 @@ public class Star extends CelestialBody {
         return 4.83 - 2.5 * Math.log10(luminosity);
 }
 
+    public boolean isInHabitableZone(double orbitDistanceAU) {
+        return orbitDistanceAU >= 0.95 && orbitDistanceAU <= 1.37 && classifyStar().equals("G-type");
+}
+
+
 
 

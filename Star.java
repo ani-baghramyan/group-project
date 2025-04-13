@@ -6,7 +6,7 @@ public class Star extends CelestialBody {
     private double luminosity;  
     private double size;    
 
-    public Star(String name, double distanceFromEarth, double temperature, double mass,
+    public Star(String name, double distanceFromEarth, String type, double temperature, double mass,
                 String color, double luminosity, double size) {
         super(name, distanceFromEarth, type);
         this.temperature = temperature;

@@ -53,7 +53,7 @@ public abstract class CelestialBody implements Comparable{
    }
 
     public int compareTo(Object other){
-        CelesrialBody otherCelestialBody = (CelesrialBody) other;
+        CelesrialBody otherCelestialBody = (CelestialBody) other;
         return name.compareToIgnoreCase(other.name);
     }
     

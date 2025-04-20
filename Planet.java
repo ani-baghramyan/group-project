@@ -38,15 +38,11 @@ public class Planet extends CelestialBody{
   }
   
   public String toString() {
-    return "Planet Name: " + getName() + "\n" +
-           "Type: " + getType() + "\n" +
-           "Distance from Earth: " + getDistanceFromEarth() + " light years\n" +
-           "Mass: " + getMass() + " kg\n" +
+    return super.toString() +
            "Radius: " + radius + "m\n" +
-           "Temperature: " + getTemperature() + " K\n" +
            "Atmosphere: " + atmosphericComposition + "\n" +
            "Moons: " + numberOfMoons + "\n" +
-           "Surface: " + surfaceConditions + "\n";
+           "Surface: " + surfaceConditions;
   }
 
   public void displayInfo(){

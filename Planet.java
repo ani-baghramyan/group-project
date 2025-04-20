@@ -5,7 +5,7 @@ public class Planet extends CelestialBody{
   private double radius;
 
   public Planet(String name, double distanceFromEarth, double mass, double temperature, String type,
-                String atmosphericComposition, int numberOfMoons, String surfaceConditions, int radius){
+                String atmosphericComposition, int numberOfMoons, String surfaceConditions, double radius){
     super(name, distanceFromEarth, mass, temperature, type);
     this.atmosphericComposition = atmosphericComposition;
     this.numberOfMoons = numberOfMoons;
@@ -53,11 +53,11 @@ public class Planet extends CelestialBody{
   public boolean equals(Object otherObject){
     if (otherObject == null)
       return false;
-    else if (getClass != otherObject.getClass)
+    else if (getClass() != otherObject.getClass())
       return false;
     else {
       Planet otherPlanet = (Planet) otherObject;
-      return getName().equals(otherObject.getName); 
+      return getName().equals(otherObject.getName()); 
     }    
   }
 

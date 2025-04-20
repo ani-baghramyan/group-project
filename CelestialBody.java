@@ -5,7 +5,7 @@ public abstract class CelestialBody implements Comparable{
     private double temperature;
     private String type;
 
-    public CelestialBody(String name, double distanceFromEarth, double name, double temperature, String type) {
+    public CelestialBody(String name, double distanceFromEarth, double mass, double temperature, String type) {
         this.name = name;
         this.distanceFromEarth = distanceFromEarth;
         this.mass = mass;

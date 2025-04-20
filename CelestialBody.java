@@ -44,6 +44,14 @@ public abstract class CelestialBody implements Comparable{
     
     public abstract void displayInfo();
 
+    public String toString(){
+        return ("Name: " + getName() + "\n" +
+                "Type: " + getType() + "\n" +
+                "Distance from Earth: " + getDistanceFromEarth() + " light years\n" +
+                "Mass: " + getMass() + " kg\n" +
+                "Temperature: " + getTemperature() + " K\n");
+   }
+
     public int compareTo(Object other){
         CelesrialBody otherCelestialBody = (CelesrialBody) other;
         return name.compareToIgnoreCase(other.name);

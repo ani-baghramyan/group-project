@@ -68,7 +68,7 @@ public abstract class CelestialBody implements Comparable<CelestialBody>{
     public int compareByMass(CelestialBody other){
         validateComparison(other);
         return Double.compare(mass, other.mass);
-  `} 
+    } 
     
    public int compareByTemperature(CelestialBody other) {
        validateComparison(other);

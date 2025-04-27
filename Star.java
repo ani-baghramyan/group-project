@@ -1,35 +1,15 @@
 public class Star extends CelestialBody {
-
-    private double temperature; 
-    private double mass;       
+      
     private String color;
     private double luminosity;  
     private double size;    
 
     public Star(String name, double distanceFromEarth, String type, double temperature, double mass,
                 String color, double luminosity, double size) {
-        super(name, distanceFromEarth, type);
-        this.temperature = temperature;
-        this.mass = mass;
+        super(name, distanceFromEarth, mass, temperature, type);
         this.color = color;
         this.luminosity = luminosity;
         this.size = size;
-    }
-
-    public double getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
-    }
-
-    public double getMass() {
-        return mass;
-    }
-
-    public void setMass(double mass) {
-        this.mass = mass;
     }
 
     public String getColor() {

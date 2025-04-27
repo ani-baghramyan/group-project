@@ -1,4 +1,4 @@
-public abstract class CelestialBody implements Comparable{
+public abstract class CelestialBody implements Comparable<CelestialBody>{
     private String name;
     private double distanceFromEarth; 
     private double mass;
@@ -50,39 +50,34 @@ public abstract class CelestialBody implements Comparable{
                 "Distance from Earth: " + getDistanceFromEarth() + " light years\n" +
                 "Mass: " + getMass() + " kg\n" +
                 "Temperature: " + getTemperature() + " K\n");
-   }
-
-    public int compareTo(Object other){
-        CelesrialBody otherCelestialBody = (CelestialBody) other;
+    }
+    
+    public int compareTo(CelestialBody other){
         return name.compareToIgnoreCase(other.name);
     }
     
+    private void validateComparison(CelestialBody other) {
+        if (other == null) {
+            throw new NullPointerException("Cannot compare to null.");
+        }
+        if (this.getClass() != other.getClass()) {
+            throw new IllegalArgumentException("Cannot compare different types of celestial bodies.");
+        }
+    }
+    
     public int compareByMass(CelestialBody other){
-        CelestialBody otherCelestialBody = (CelestialBody) other;
-        if (mass > other.mass)
-          return 1;
-        else if (mass < other.mass)
-          return -1;
-        else 
-          return 0;
+        validateComparison(other);
+        return Double.compare(mass, other.mass);
   `} 
     
    public int compareByTemperature(CelestialBody other) {
-        if (temperature > other.temperature)
-            return 1;
-        else if (temperature < other.temperature)
-            return -1;
-        else
-            return 0;
+       validateComparison(other);
+       return Double.compare(temperature, other.temperature);
    }
 
    public int compareByDistanceFromEarth(CelestialBody other) {
-        if (distanceFromEarth > other.distanceFromEarth)
-            return 1;
-        else if (distanceFromEarth < other.distanceFromEarth)
-            return -1;
-        else
-            return 0;
+       validateComparison(other);
+       return Double.compare(distanceFromEarth, other.distanceFromEarth);
    }
          
 }

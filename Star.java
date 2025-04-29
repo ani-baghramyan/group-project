@@ -105,6 +105,7 @@ public class Star extends CelestialBody {
     public double estimateMainSequenceLifespan() {
         return 10 * (1 / Math.pow(getMass(), 2.5)); 
 }
+}
 
 
 

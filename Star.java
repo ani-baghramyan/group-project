@@ -37,27 +37,27 @@ public class Star extends CelestialBody {
     }
 
     public String classifyStar() {
-        if (temperature >= 30000) return "O-type";
-        else if (temperature >= 10000) 
+        if (getTemperature() >= 30000) return "O-type";
+        else if (getTemperature() >= 10000) 
             return "B-type";
-        else if (temperature >= 7500) 
+        else if (getTemperature() >= 7500) 
             return "A-type";
-        else if (temperature >= 6000) 
+        else if (getTemperature() >= 6000) 
             return "F-type";
-        else if (temperature >= 5200) 
+        else if (getTemperature() >= 5200) 
             return "G-type";
-        else if (temperature >= 3700) 
+        else if (getTemperature() >= 3700) 
             return "K-type";
         else return "M-type";
     }
   
    @Override
     public String toString() {
-        return "Star: " + name + "\n" +
-               "Distance from Earth: " + distanceFromEarth + " light years\n" +
-               "Type: " + type + "\n" +
-               "Temperature: " + temperature + " K\n" +
-               "Mass: " + mass + " solar masses\n" +
+        return "Star: " + getName() + "\n" +
+               "Distance from Earth: " + getDistanceFromEarth() + " light years\n" +
+               "Type: " + getType() + "\n" +
+               "Temperature: " + getTemperature() + " K\n" +
+               "Mass: " + getMass() + " solar masses\n" +
                "Color: " + color + "\n" +
                "Luminosity: " + luminosity + " solar luminosities\n" +
                "Size: " + size + " solar radii\n" +
@@ -84,11 +84,11 @@ public class Star extends CelestialBody {
 }
 
     public String getLifeStage() {
-    if (mass < 0.08)
+    if (getMass() < 0.08)
         return "Brown Dwarf (Failed Star)";
-    else if (mass < 0.5)
+    else if (getMass() < 0.5)
         return "Main Sequence (Low Mass)";
-    else if (mass <= 8)
+    else if (getMass() <= 8)
         return "Main Sequence";
     else
         return "High-Mass Star (Short Lifespan)";
@@ -103,7 +103,7 @@ public class Star extends CelestialBody {
 }
 
     public double estimateMainSequenceLifespan() {
-        return 10 * (1 / Math.pow(mass, 2.5)); 
+        return 10 * (1 / Math.pow(getMass(), 2.5)); 
 }
 
 

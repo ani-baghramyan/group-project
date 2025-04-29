@@ -55,7 +55,7 @@ public class Planet extends CelestialBody{
       return false;
     else if (getClass() != otherObject.getClass())
       return false;
-    else {a
+    else {
       Planet otherPlanet = (Planet) otherObject;
       return getName().equals(otherPlanet.getName()); 
     }    

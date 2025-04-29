@@ -1,10 +1,8 @@
 import java.util.ArrayList;
-
 public class Galaxy extends SpaceObject {
     private long numberOfStars;
     private double diameter;
     private int age;
-
     private ArrayList<Star> stars;
     private ArrayList<Planet> planets;
 
@@ -18,6 +16,7 @@ public class Galaxy extends SpaceObject {
         this.stars = stars;
         this.planets = planets;
     }
+    
 
     public long getNumberOfStars() {
         return numberOfStars;

@@ -57,4 +57,16 @@ public class Main {
             Star star = selectedGalaxy.findStarByName(starName);
             if (star != null) star.displayInfo();
             else System.out.println("Star not found.");
-        } else if (choice == 2) {
+         } else if (choice == 2) {
+            System.out.println("Enter the planet's name:");
+            String planetName = scanner.nextLine();
+            Planet planet = selectedGalaxy.findPlanetByName(planetName);
+            if (planet != null) planet.displayInfo();
+            else System.out.println("Planet not found.");
+        } else {
+            System.out.println("Invalid choice.");
+        }
+
+        scanner.close(); 
+    } 
+}

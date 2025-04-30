@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Galaxy extends SpaceObject {
+public class Galaxy extends CelestialBody {
     private long numberOfStars;
     private double diameter;
     private int age;

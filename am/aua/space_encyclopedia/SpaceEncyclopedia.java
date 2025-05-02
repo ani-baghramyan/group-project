@@ -1,5 +1,6 @@
 package am.aua.space_encyclopedia;
 import java.io.*;
+import am.aua.space_encyclopedia.core;
 
 public class SpaceEncyclopedia {
    private  DataManager dataManager;

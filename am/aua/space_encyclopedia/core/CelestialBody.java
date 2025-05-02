@@ -16,12 +16,12 @@ public abstract class CelestialBody implements Comparable<CelestialBody>{
         this.type = type;
         
     }
-    public CelestialBody(String name, double distanceFromEarth, double mass, double temperature, String type) {
-        this.name = name;
-        this.distanceFromEarth = distanceFromEarth;
-        this.mass = mass;
-        this.temperature = temperature;
-        this.type = type;
+    public CelestialBody(CelestialBody other) {
+        this.name = other.name;
+        this.distanceFromEarth = other.distanceFromEarth;
+        this.mass = other.mass;
+        this.temperature = other.temperature;
+        this.type = other.type;
         
     }
     

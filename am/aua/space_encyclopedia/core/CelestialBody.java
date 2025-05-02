@@ -53,7 +53,6 @@ public abstract class CelestialBody implements Comparable<CelestialBody>{
         return type;
     }
     
-    public abstract String displayInfo();
     public abstract String showFacts();
   
     @Override

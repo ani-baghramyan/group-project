@@ -25,14 +25,6 @@ public abstract class CelestialBody implements Comparable<CelestialBody>{
         
     }
     
-    public CelestialBody(CelestialBody that){
-        this.name = that.name;
-        this.distanceFromEarth = that.distanceFromEarth;
-        this.mass = that.mass;
-        this.temperature = that.temperature;
-        this.type = that.type;
-    }
-
     public String getName() {
         return name;
     }

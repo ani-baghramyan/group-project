@@ -1,0 +1,9 @@
+Star,Betelgeuse,642.500000,2.100e+31,3500.00,M,Red,126000.00,887000.00
+Star,Sirius,8.600000,4.018e+30,9940.00,A,White,25.40,1189640.00
+Star,Sun,0.000015,1.989e+30,5778.00,G,Yellow,1.00,696340.00
+Planet,Earth,0.000016,5.972e+24,288.00,Terrestrial,Nitrogen-Oxygen,1,Rocky with water,6371.00
+Planet,Jupiter,0.000082,1.898e+27,165.00,Gas Giant,Hydrogen-Helium,79,Thick atmosphere with Great Red Spot,69911.00
+Planet,Mars,0.000024,6.417e+23,210.00,Terrestrial,Carbon Dioxide,2,Cold and has dry desert with ice caps,3389.00
+Galaxy,Andromeda,2537000.000000,1.230e+42,0.00,Spiral,1000000000000,220000.00,10.00
+Galaxy,Milky Way,0.000000,1.500e+42,0.00,Spiral,250000000000,105700.00,13.51
+Galaxy,Triangulum,2730000.000000,5.000e+41,0.00,Spiral,40000000000,60000.00,12.00

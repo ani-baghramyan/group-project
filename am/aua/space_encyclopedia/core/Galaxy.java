@@ -8,20 +8,39 @@ public class Galaxy extends CelestialBody {
     private double age;
     //constuctor
     public Galaxy(String name, double distanceFromEarth, double mass, double temperature, String type,
-                  long numberOfStars, double diameter, double age) {
-        super(name, distanceFromEarth, mass, temperature, type);
-        this.numberOfStars = numberOfStars;
-        this.diameter = diameter;
-        this.age = age;
-     }
+              long numberOfStars, double diameter, double age) {
+    super(name, distanceFromEarth, mass, temperature, type);
+
+    if (numberOfStars < 0)
+        throw new IllegalArgumentException("Number of stars cannot be negative.");
+    if (diameter <= 0)
+        throw new IllegalArgumentException("Diameter must be positive.");
+    if (age <= 0)
+        throw new IllegalArgumentException("Age must be positive.");
+
+    this.numberOfStars = numberOfStars;
+    this.diameter = diameter;
+    this.age = age;
+}
+
     //copy constructor
     public Galaxy(Galaxy other) {
-        super(other.getName(), other.getDistanceFromEarth(), other.getMass(), other.getTemperature(), other.getType());
-        this.numberOfStars = other.numberOfStars;
-        this.diameter = other.diameter;
-        this.age = other.age;
-    }
-    
+    super(
+        other != null ? other.getName() : null,
+        other != null ? other.getDistanceFromEarth() : 0,
+        other != null ? other.getMass() : 0,
+        other != null ? other.getTemperature() : 0,
+        other != null ? other.getType() : null
+    );
+
+    if (other == null)
+        throw new NullPointerException("Cannot copy from a null Galaxy.");
+
+    this.numberOfStars = other.numberOfStars;
+    this.diameter = other.diameter;
+    this.age = other.age;
+}
+   
     //accessors
     public long getNumberOfStars() {
         return numberOfStars;
@@ -56,18 +75,23 @@ public class Galaxy extends CelestialBody {
             return false;
         else {
             Galaxy otherGalaxy = (Galaxy) otherObject;
-            return getName().equals(otherGalaxy.getName());
+            return getName() != null && getName().equalsIgnoreCase(otherGalaxy.getName());
         }
     }
     public double estimateStarDensity() {
         double radiusLY = diameter / 2.0; // diameter in light-years
         double volume = (4.0 / 3.0) * Math.PI * Math.pow(radiusLY, 3); // in cubic light-years
+        if (volume <= 0)
+            throw new ArithmeticException("Galaxy volume must be greater than zero to estimate star density.");
         return numberOfStars / volume;
     }
-    public double calculateEscapeVelocity() {
-        double radiusMeters = (diameter * LIGHT_YEAR_IN_METERS) / 2; // convert light-years to meters
-        return Math.sqrt((2 * G * getMass()) / radiusMeters);
-    }
+   public double calculateEscapeVelocity() {
+    double radiusMeters = (diameter * LIGHT_YEAR_IN_METERS) / 2;
+    if (radiusMeters <= 0)
+        throw new ArithmeticException("Diameter must be greater than zero to calculate escape velocity.");
+
+    return Math.sqrt((2 * G * getMass()) / radiusMeters);
+}
     @Override
     public String showFacts(){
         StringBuilder facts = new StringBuilder();

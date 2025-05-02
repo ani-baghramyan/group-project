@@ -1,9 +1,12 @@
+package am.aua.space_encyclopedia.core;
+
 public class Planet extends CelestialBody{
   private String atmosphericComposition;
   private int numberOfMoons;
   private String surfaceConditions;
   private double radius;
 
+  //constructor
   public Planet(String name, double distanceFromEarth, double mass, double temperature, String type,
                 String atmosphericComposition, int numberOfMoons, String surfaceConditions, double radius){
     super(name, distanceFromEarth, mass, temperature, type);
@@ -12,15 +15,15 @@ public class Planet extends CelestialBody{
     this.surfaceConditions = surfaceConditions;
     this.radius = radius;
   }
-  
-  public Planet(Planet that){
-    super(that);
-    this.atmosphericComposition = that.atmosphericComposition;
-    this.numberOfMoons = that.numberOfMoons;
-    this.surfaceConditions = that.surfaceConditions;
-    this.radius = that.radius;
+  //copy constructor
+  public Planet(Planet other){
+    super(other);
+    this.atmosphericComposition = other.atmosphericComposition;
+    this.numberOfMoons = other.numberOfMoons;
+    this.surfaceConditions = other.surfaceConditions;
+    this.radius = other.radius;
   }
-  
+  //accessors
   public String getAtmosphericComposition() {
     return atmosphericComposition;
   }
@@ -36,20 +39,24 @@ public class Planet extends CelestialBody{
   public double getRadius(){
     return radius;
   }
-  
+  //other methods
+  @Override
   public String toString() {
-    return super.toString() +
-           "Radius: " + radius + "m\n" +
-           "Atmosphere: " + atmosphericComposition + "\n" +
-           "Moons: " + numberOfMoons + "\n" +
-           "Surface: " + surfaceConditions;
-  }
-
-  public void displayInfo(){
-    System.out.println("\n--- Planet Information ---");
-    System.out.println(toString());
+    return String.format(
+            "%s\n" +
+                    "Radius: %.1f km\n" +
+                    "Atmosphere: %s\n" +
+                    "Moons: %d\n" +
+                    "Surface Conditions: %s",
+            super.toString(),
+            radius / 1000, // convert from m to km
+            atmosphericComposition,
+            numberOfMoons,
+            surfaceConditions
+    );
   }
   
+  @Override
   public boolean equals(Object otherObject){
     if (otherObject == null)
       return false;
@@ -60,21 +67,30 @@ public class Planet extends CelestialBody{
       return getName().equals(otherPlanet.getName()); 
     }    
   }
+  @Override
+  public String showFacts(){
+    StringBuilder facts = new StringBuilder();
 
-   public int compareByNumberOfMoons(Planet other) {
-        if (numberOfMoons > other.numberOfMoons)
-            return 1;
-        else if (numberOfMoons < other.numberOfMoons)
-            return -1;
-        else
-            return 0;
-   }
+    // Header
+    facts.append("\nMORE PLANETARY FACTS:\n");
+
+    facts.append("- ").append(getName()).append(" is a fascinating world!\n");
+
+    // Physical Properties
+    facts.append("\nPHYSICAL CHARACTERISTICS:\n");
+    facts.append(String.format("- Surface Gravity: %.2f m/s²\n", calculateSurfaceGravity()));
+
+    // Moons
+    facts.append("\nSATELLITE SYSTEM:\n");
+    facts.append("- Number of Moons: ").append(numberOfMoons).append("\n");
+    facts.append("- Moon Category: ").append(moonCategory()).append("\n");
+
+    return facts.toString();
+  }
   
    public double calculateSurfaceGravity(){
-     double G = 6.67430e-11;
      return (G * getMass()) / (radius * radius);
    }
-  
    public String moonCategory() {
      if (numberOfMoons == 0) 
        return "Moonless";

@@ -8,22 +8,35 @@ public abstract class CelestialBody implements Comparable<CelestialBody>{
     private double temperature;
     private String type;
 
-    public CelestialBody(String name, double distanceFromEarth, double mass, double temperature, String type) {
-        this.name = name;
-        this.distanceFromEarth = distanceFromEarth;
-        this.mass = mass;
-        this.temperature = temperature;
-        this.type = type;
-        
-    }
-    public CelestialBody(CelestialBody other) {
-        this.name = other.name;
-        this.distanceFromEarth = other.distanceFromEarth;
-        this.mass = other.mass;
-        this.temperature = other.temperature;
-        this.type = other.type;
-        
-    }
+public CelestialBody(String name, double distanceFromEarth, double mass, double temperature, String type) {
+    if (name == null || name.trim().isEmpty())
+        throw new IllegalArgumentException("Name cannot be null or empty.");
+    if (distanceFromEarth < 0)
+        throw new IllegalArgumentException("Distance from Earth cannot be negative.");
+    if (mass <= 0)
+        throw new IllegalArgumentException("Mass must be positive.");
+    if (temperature < 0)
+        throw new IllegalArgumentException("Temperature cannot be negative.");
+    if (type == null || type.trim().isEmpty())
+        throw new IllegalArgumentException("Type cannot be null or empty.");
+
+    this.name = name;
+    this.distanceFromEarth = distanceFromEarth;
+    this.mass = mass;
+    this.temperature = temperature;
+    this.type = type;
+}
+
+public CelestialBody(CelestialBody other) {
+    if (other == null)
+        throw new NullPointerException("Cannot copy from a null CelestialBody.");
+
+    this.name = other.name;
+    this.distanceFromEarth = other.distanceFromEarth;
+    this.mass = other.mass;
+    this.temperature = other.temperature;
+    this.type = other.type;
+}
     
     public String getName() {
         return name;
@@ -69,6 +82,8 @@ public abstract class CelestialBody implements Comparable<CelestialBody>{
             return false;
         else{
             CelestialBody that = (CelestialBody) otherObject;
+            if (this.name == null || that.name == null)
+                return false;
             return name.equalsIgnoreCase(that.name);  // Name-based equality only
         }
     }

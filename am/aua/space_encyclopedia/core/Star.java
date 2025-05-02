@@ -1,110 +1,125 @@
+package am.aua.space_encyclopedia.core;
 public class Star extends CelestialBody {
+      public static final double SUN_MASS_KG = 1.989e30;// kg
+      public static final double SUN_ABSOLUTE_MAGNITUDE = 4.83; // in V band
+      public static final double SUN_LIFESPAN = 10;// in billion years
       
-    private String color;
-    private double luminosity;  
-    private double size;    
-
-    public Star(String name, double distanceFromEarth, String type, double temperature, double mass,
-                String color, double luminosity, double size) {
-        super(name, distanceFromEarth, mass, temperature, type);
-        this.color = color;
-        this.luminosity = luminosity;
-        this.size = size;
+      private String color;
+      private double luminosity;  
+      private double size;   
+      //constructor
+      public Star(String name, double distanceFromEarth, double mass, double temperature, String type,
+                  String color, double luminosity, double size) {
+            super(name, distanceFromEarth, mass, temperature, type);
+            this.color = color;
+            this.luminosity = luminosity;
+            this.size = size;
+      }
+      //copy constrcutor
+      public Star(Star other) {
+          super(other.getName(), other.getDistanceFromEarth(), other.getMass(), other.getTemperature(), other.getType());
+          this.color = other.color;
+          this.luminosity = other.luminosity;
+          this.size = other.size;
+      }
+      //accessors
+      public String getColor() {
+            return color;
+      }
+      public double getLuminosity() {
+            return luminosity;
+      }
+      public double getSize() {
+            return size;
+      }
+      @Override
+      public String toString() {
+            return String.format(
+                  "%s\n" +
+                  "Color: %s\n" +
+                  "Luminosity: %.2f solar unites\n" +
+                  "Size: %.2f solar radii\n",
+                  super.toString(),
+                  color,
+                  luminosity,
+                  size
+            );
+      }
+      @Override
+      public boolean equals(Object otherObject){
+            if (otherObject == null)
+                  return false;
+            else if (getClass() != otherObject.getClass())
+                  return false;
+            else {
+                  Star otherStar = (Star) otherObject;
+                  return getName().equals(otherStar.getName());
+            }
+      }
+       public String showFacts() {
+             StringBuilder facts = new StringBuilder();
+              // Header
+              facts.append("\nMORE STAR FACTS:\n");
+              // Basic Info
+              facts.append("- ").append(getName()).append("star.\n");
+              // Classification
+              facts.append("\nSTELLAR AND PHYSICAL CLASSIFICATION:\n");
+              facts.append("- Spectral Type: ").append(classifyStar()).append("\n");
+              facts.append(String.format("- Absolute Magnitude: %.2f\n", calculateAbsoluteMagnitude()));
+      
+              // Lifecycle Info
+              facts.append("\nLIFECYCLE INFORMATION:\n");
+              facts.append("- Current Stage: ").append(calculateLifeStage()).append("\n");
+              facts.append(String.format("- Main Sequence Lifespan: %.1f billion years\n",
+                      estimateMainSequenceLifespan()));
+      
+              return facts.toString();
     }
 
-    public String getColor() {
-        return color;
-    }
+     public String classifyLuminosity() {
+        if (luminosity >= 30000)
+            return "I (Supergiant)";
+        else if (luminosity >= 1000)
+            return "II (Bright Giant)";
+        else if (luminosity >= 100)
+            return "III (Giant)";
+        else if (luminosity >= 10)
+            return "IV (Subgiant)";
+        else if (luminosity >= 0.01)
+            return "V (Main-sequence)";
+        else return "VII (White Dwarf)";
+     }
+      
+     public String calculateLifeStage() {
+        double massInKg = getMass();  // mass in kg
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public double getLuminosity() {
-        return luminosity;
-    }
-
-    public void setLuminosity(double luminosity) {
-        this.luminosity = luminosity;
-    }
-
-    public double getSize() {
-        return size;
-    }
-
-    public void setSize(double size) {
-        this.size = size;
-    }
-
-    public String classifyStar() {
-        if (getTemperature() >= 30000) return "O-type";
-        else if (getTemperature() >= 10000) 
-            return "B-type";
-        else if (getTemperature() >= 7500) 
-            return "A-type";
-        else if (getTemperature() >= 6000) 
-            return "F-type";
-        else if (getTemperature() >= 5200) 
-            return "G-type";
-        else if (getTemperature() >= 3700) 
-            return "K-type";
-        else return "M-type";
-    }
-  
-   @Override
-    public String toString() {
-        return "Star: " + getName() + "\n" +
-               "Distance from Earth: " + getDistanceFromEarth() + " light years\n" +
-               "Type: " + getType() + "\n" +
-               "Temperature: " + getTemperature() + " K\n" +
-               "Mass: " + getMass() + " solar masses\n" +
-               "Color: " + color + "\n" +
-               "Luminosity: " + luminosity + " solar luminosities\n" +
-               "Size: " + size + " solar radii\n" +
-               "Spectral Class: " + classifyStar();
-    }
-
-   public void displayInfo(){
-       System.out.println("\n---Star Information ---");
-       System.out.println(toString());
-   }
-
-   public String classifyLuminosity() {
-    if (luminosity >= 30000)
-        return "I (Supergiant)";
-    else if (luminosity >= 1000)
-        return "II (Bright Giant)";
-    else if (luminosity >= 100)
-        return "III (Giant)";
-    else if (luminosity >= 10)
-        return "IV (Subgiant)";
-    else if (luminosity >= 0.01)
-        return "V (Main-sequence)";
-    else return "VII (White Dwarf)";
-}
-
-    public String getLifeStage() {
-    if (getMass() < 0.08)
-        return "Brown Dwarf (Failed Star)";
-    else if (getMass() < 0.5)
-        return "Main Sequence (Low Mass)";
-    else if (getMass() <= 8)
-        return "Main Sequence";
-    else
-        return "High-Mass Star (Short Lifespan)";
-}
-
-    public double calculateAbsoluteMagnitude() {
-        return 4.83 - 2.5 * Math.log10(luminosity);
-}
-
-    public boolean isInHabitableZone(double orbitDistanceAU) {
-        return orbitDistanceAU >= 0.95 && orbitDistanceAU <= 1.37 && classifyStar().equals("G-type");
-}
+        // Normalize the mass to solar masses
+        double massInSolarMasses = massInKg / SUN_MASS_KG;
+    
+        if (massInSolarMasses < 0.08)
+            return "Brown Dwarf (Failed Star)";
+        else if (massInSolarMasses < 0.5)
+            return "Low-Mass Main Sequence Star";
+        else if (massInSolarMasses <= 8)
+            return "Main Sequence Star";
+        else
+            return "High-Mass Main Sequence Star";
+     }
+      
+     public double calculateAbsoluteMagnitude() {
+        if (luminosity <= 0) {
+            throw new IllegalArgumentException("Luminosity must be greater than zero to calculate magnitude.");
+        }
+        return SUN_ABSOLUTE_MAGNITUDE - 2.5 * Math.log10(luminosity);
+     }
 
     public double estimateMainSequenceLifespan() {
-        return 10 * (1 / Math.pow(getMass(), 2.5)); 
-}
+        double massInKg = getMass(); // getMass() must return kg
+        double massRatio = massInKg / SUN_MASS_KG;
+
+        return SUN_LIFESPAN * Math.pow(massRatio, -2.5);
+    }
+
 }
 
 

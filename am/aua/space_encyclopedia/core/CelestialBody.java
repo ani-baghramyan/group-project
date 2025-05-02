@@ -1,3 +1,5 @@
+package am.aua.space_encyclopedia.core;
+
 public abstract class CelestialBody implements Comparable<CelestialBody>{
     public final static double G = 6.67430e-11;
     private String name;

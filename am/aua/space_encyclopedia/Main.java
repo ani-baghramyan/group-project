@@ -1,0 +1,119 @@
+package am.aua.space_encyclopedia;
+import java.io.*;
+
+public class SpaceEncyclopedia {
+   private  DataManager dataManager;
+
+    public SpaceEncyclopedia() {
+        this.dataManager = new DataManager();
+    }
+    public String showMenuPage() {
+        StringBuilder menu = new StringBuilder();
+
+        menu.append("\n----- WELCOME TO THE SPACE ENCYCLOPEDIA ---\n");
+        menu.append("Explore stars, planets, and galaxies right from your console!\n");
+        menu.append("------------------------------------------------------------\n");
+        menu.append("Available Commands:\n");
+        menu.append("list           - Show all known celestial objects\n");
+        menu.append("search <name>  - Find celestial bodies by name\n");
+        menu.append("view <name>    - Display detailed info about a specific celestial body\n");
+        menu.append("menu           - Show this command menu again\n");
+        menu.append("quit           - Exit the encyclopedia\n");
+        menu.append("------------------------------------------------------------\n");
+        menu.append("Tip: Use full names like 'Sun' or 'Andromeda' when searching.\n");
+        return menu.toString();
+    }
+
+    public void start() throws IOException {
+        System.out.println(showMenuPage());
+        BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
+        String command = " ";
+        while (!(command.equals("q")) ){
+            System.out.println("You are ready to explore the universe:\n");
+            command = input.readLine().trim();
+            if (command.equals("list")) {
+                System.out.println("\n=== ALL OBJECTS ===");
+
+                System.out.println("STARS:");
+                for (Star star : dataManager.getStars()) {
+                    System.out.println("- " + star.getName());
+                }
+
+                System.out.println("\nPLANETS:");
+                for (Planet planet : dataManager.getPlanets()) {
+                    System.out.println("- " + planet.getName());
+                }
+
+                System.out.println("\nGALAXIES:");
+                for (Galaxy galaxy : dataManager.getGalaxies()) {
+                    System.out.println("- " + galaxy.getName());
+                }
+            }
+            else if (command.startsWith("view ")) {
+                String name = command.substring(5).trim();
+                CelestialBody object = dataManager.findStarByName(name);
+                if (object == null)
+                    object = dataManager.findPlanetByName(name);
+                if (object == null)
+                    object = dataManager.findGalaxyByName(name);
+
+                if (object == null) {
+                    System.out.println("Object not found: " + name);
+                    return;
+                }
+
+                System.out.println("\n=== " + object.getName().toUpperCase() + " ===");
+                System.out.println(object); // Basic info
+
+                System.out.println("\nInput 'facts' for detailed info or any key to return");
+                String response = input.readLine().trim();
+                if (response.equals("facts")) {
+                    System.out.println("\nDETAILED FACTS:");
+                    System.out.println(object.showFacts());
+                }
+            }
+            else if (command.startsWith("search ")) {
+                String term = command.substring(7).trim();
+                System.out.println("\nSEARCH RESULTS:");
+
+                boolean found = false;
+
+                for (Star star : dataManager.getStars()) {
+                    if (star.getName().toLowerCase().contains(term.toLowerCase())) {
+                        System.out.println("[Star] " + star.getName());
+                        found = true;
+                    }
+                }
+
+                for (Galaxy galaxy : dataManager.getGalaxies()) {
+                    if (galaxy.getName().toLowerCase().contains(term.toLowerCase())) {
+                        System.out.println("[Galaxy] " + galaxy.getName());
+                        found = true;
+                    }
+                }
+
+
+                if (!found) {
+                    System.out.println("No objects found matching: " + term);
+                }
+            }
+            else if (command.equals("menu")) {
+                System.out.println(showMenuPage());
+            }
+        }
+
+        System.out.println("Goodbye!");
+    }
+    private void showMainMenu() {
+        System.out.println("\nMAIN MENU:");
+        System.out.println("1. View All Objects");
+        System.out.println("2. Search Objects");
+        System.out.println("3. Exit");
+    }
+
+    public static void main(String[] args) throws IOException {
+        Main m = new Main();
+        m.start();
+    }
+ 
+}

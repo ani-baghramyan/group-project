@@ -69,6 +69,7 @@ public class Galaxy extends CelestialBody {
         return Math.sqrt((2 * G * getMass()) / radiusMeters);
     }
      public void displayInfo() {
+        System.out.println("\n--- Planet Information ---");
         System.out.println(this);
     }
     @Override

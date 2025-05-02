@@ -74,7 +74,27 @@ public class Star extends CelestialBody {
                       estimateMainSequenceLifespan()));
       
               return facts.toString();
-    }
+       }
+      public String classifyStar() {
+            String spectralType;
+
+            if (getTemperature() > 30000)
+                  spectralType = "O";
+            else if (getTemperature() > 10000)
+                  spectralType = "B";
+            else if (getTemperature() > 7500)
+                  spectralType = "A";
+            else if (getTemperature() > 6000)
+                  spectralType = "F";
+            else if (getTemperature() > 5200)
+                  spectralType = "G";
+             else if (getTemperature() > 3700)
+                  spectralType = "K";
+            else
+                  spectralType = "M";
+            return spectralType + classifyLuminosity();
+      }
+
 
      public String classifyLuminosity() {
         if (luminosity >= 30000)

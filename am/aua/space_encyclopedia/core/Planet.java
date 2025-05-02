@@ -8,21 +8,34 @@ public class Planet extends CelestialBody{
 
   //constructor
   public Planet(String name, double distanceFromEarth, double mass, double temperature, String type,
-                String atmosphericComposition, int numberOfMoons, String surfaceConditions, double radius){
+              String atmosphericComposition, int numberOfMoons, String surfaceConditions, double radius) {
     super(name, distanceFromEarth, mass, temperature, type);
+
+    if (atmosphericComposition == null || atmosphericComposition.trim().isEmpty())
+        throw new IllegalArgumentException("Atmospheric composition cannot be null or empty.");
+    if (numberOfMoons < 0)
+        throw new IllegalArgumentException("Number of moons cannot be negative.");
+    if (surfaceConditions == null || surfaceConditions.trim().isEmpty())
+        throw new IllegalArgumentException("Surface conditions cannot be null or empty.");
+    if (radius <= 0)
+        throw new IllegalArgumentException("Radius must be a positive value.");
+
     this.atmosphericComposition = atmosphericComposition;
     this.numberOfMoons = numberOfMoons;
     this.surfaceConditions = surfaceConditions;
     this.radius = radius;
-  }
+}
   //copy constructor
-  public Planet(Planet other){
+ public Planet(Planet other) {
     super(other);
+    if (other == null)
+        throw new NullPointerException("Cannot copy from a null Planet.");
+
     this.atmosphericComposition = other.atmosphericComposition;
     this.numberOfMoons = other.numberOfMoons;
     this.surfaceConditions = other.surfaceConditions;
     this.radius = other.radius;
-  }
+}
   //accessors
   public String getAtmosphericComposition() {
     return atmosphericComposition;
@@ -64,7 +77,7 @@ public class Planet extends CelestialBody{
       return false;
     else {
       Planet otherPlanet = (Planet) otherObject;
-      return getName().equals(otherPlanet.getName()); 
+      return getName() != null && getName().equalsIgnoreCase(otherPlanet.getName()); 
     }    
   }
   @Override
@@ -88,9 +101,12 @@ public class Planet extends CelestialBody{
     return facts.toString();
   }
   
-   public double calculateSurfaceGravity(){
-     return (G * getMass()) / (radius * radius);
-   }
+  public double calculateSurfaceGravity() {
+    if (radius <= 0)
+        throw new ArithmeticException("Radius must be positive to calculate surface gravity.");
+    return (G * getMass()) / (radius * radius);
+}
+  
    public String moonCategory() {
      if (numberOfMoons == 0) 
        return "Moonless";

@@ -16,11 +16,11 @@ public class SpaceEncyclopedia {
         menu.append("Explore stars, planets, and galaxies right from your console!\n");
         menu.append("------------------------------------------------------------\n");
         menu.append("Available Commands:\n");
-        menu.append("list           - Show all known celestial objects\n");
-        menu.append("search <name>  - Find celestial bodies by name\n");
-        menu.append("view <name>    - Display detailed info about a specific celestial body\n");
-        menu.append("menu           - Show this command menu again\n");
-        menu.append("quit           - Exit the encyclopedia\n");
+        menu.append("l          - List all known celestial objects\n");
+        menu.append("s <name>   - Search celestial bodies by name\n");
+        menu.append("v <name>   - View detailed info about a specific celestial body\n");
+        menu.append("m          - Show this command menu again\n");
+        menu.append("q          - Exit the encyclopedia\n");
         menu.append("------------------------------------------------------------\n");
         menu.append("Tip: Use full names like 'Sun' or 'Andromeda' when searching.\n");
         return menu.toString();
@@ -33,7 +33,7 @@ public class SpaceEncyclopedia {
         while (!(command.equals("q")) ){
             System.out.println("Let's explore the universe!\n");
             command = input.readLine().trim();
-            if (command.equals("list")) {
+            if (command.equals("l")) {
                 System.out.println("\n=== ALL OBJECTS ===");
 
                 System.out.println("STARS:");
@@ -51,8 +51,8 @@ public class SpaceEncyclopedia {
                     System.out.println("- " + galaxy.getName());
                 }
             }
-            else if (command.startsWith("view ")) {
-                String name = command.substring(5).trim();
+            else if (command.startsWith("v")) {
+                String name = command.substring(1).trim();
                 CelestialBody object = dataManager.findStarByName(name);
                 if (object == null)
                     object = dataManager.findPlanetByName(name);
@@ -67,15 +67,15 @@ public class SpaceEncyclopedia {
                 System.out.println("\n=== " + object.getName().toUpperCase() + " ===");
                 System.out.println(object); // Basic info
 
-                System.out.println("\nInput 'facts' for detailed info or any key to return");
+                System.out.println("\nInput 'f' for more facts about " + object.getName());
                 String response = input.readLine().trim();
-                if (response.equals("facts")) {
+                if (response.equals("f")) {
                     System.out.println("\nDETAILED FACTS:");
                     System.out.println(object.showFacts());
                 }
             }
-            else if (command.startsWith("search ")) {
-                String term = command.substring(7).trim();
+            else if (command.startsWith("s")) {
+                String term = command.substring(1).trim();
                 System.out.println("\nSEARCH RESULTS:");
 
                 boolean found = false;

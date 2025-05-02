@@ -1,13 +1,15 @@
-package am.aua.space_encyclopedia.core;
+package am.aua.space_encyclopedia.data;
 
 import java.io.*;
 import java.util.ArrayList;
+import am.aua.space_encyclopedia.core.*;
 
 public class DataManager {
+    private static final String DATA_FILE = "am/aua/space_encyclopedia/data/space_objects.txt";
+    
     private ArrayList<Star> stars;
     private ArrayList<Planet> planets;
     private ArrayList<Galaxy> galaxies;
-    private static final String DATA_FILE = "space_objects.txt";
 
     public DataManager() {
         stars = new ArrayList<>();

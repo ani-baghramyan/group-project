@@ -9,15 +9,25 @@ public class Star extends CelestialBody {
       private double size;   
       //constructor
       public Star(String name, double distanceFromEarth, double mass, double temperature, String type,
-                  String color, double luminosity, double size) {
-            super(name, distanceFromEarth, mass, temperature, type);
-            this.color = color;
-            this.luminosity = luminosity;
-            this.size = size;
+            String color, double luminosity, double size) {
+          super(name, distanceFromEarth, mass, temperature, type);
+      
+          if (color == null || color.trim().isEmpty())
+              throw new IllegalArgumentException("Color cannot be null or empty.");
+          if (luminosity <= 0)
+              throw new IllegalArgumentException("Luminosity must be a positive value.");
+          if (size <= 0)
+              throw new IllegalArgumentException("Size must be a positive value.");
+      
+          this.color = color;
+          this.luminosity = luminosity;
+          this.size = size;
       }
       //copy constrcutor
       public Star(Star other) {
           super(other.getName(), other.getDistanceFromEarth(), other.getMass(), other.getTemperature(), other.getType());
+          if (other == null)
+              throw new NullPointerException("Cannot copy from a null Star.");
           this.color = other.color;
           this.luminosity = other.luminosity;
           this.size = other.size;
@@ -53,7 +63,7 @@ public class Star extends CelestialBody {
                   return false;
             else {
                   Star otherStar = (Star) otherObject;
-                  return getName().equals(otherStar.getName());
+                  return getName() != null && getName().equalsIgnoreCase(otherStar.getName());
             }
       }
        public String showFacts() {

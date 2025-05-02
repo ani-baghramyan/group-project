@@ -30,7 +30,7 @@ public class SpaceEncyclopedia {
         BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
         String command = " ";
         while (!(command.equals("q")) ){
-            System.out.println("You are ready to explore the universe:\n");
+            System.out.println("Let's explore the universe!\n");
             command = input.readLine().trim();
             if (command.equals("list")) {
                 System.out.println("\n=== ALL OBJECTS ===");
@@ -84,6 +84,12 @@ public class SpaceEncyclopedia {
                         System.out.println("[Star] " + star.getName());
                         found = true;
                     }
+                }
+                for (Planet planet : dataManager.getPlanets()) {
+                   if (planet.getName().toLowerCase().contains(term.toLowerCase())) {
+                      System.out.println("[Planet] " + planet.getName());
+                      found = true;
+                   }
                 }
 
                 for (Galaxy galaxy : dataManager.getGalaxies()) {

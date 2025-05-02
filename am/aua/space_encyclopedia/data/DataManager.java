@@ -75,6 +75,7 @@ public class DataManager {
     private void loadData() {
         // Create sample data if file doesn't exist
         if (!new File(DATA_FILE).exists()) {
+            System.out.println("Creating and loading sample celestial objects...");
             createSampleData();
             saveData();
             return;
@@ -95,8 +96,8 @@ public class DataManager {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Error loading data: " + e.getMessage());
-        }
+        System.out.println("Error loading data from " + DATA_FILE + ": " + e.getMessage());
+    }
     }
     private CelestialBody parseLine(String line) {
         String[] parts = line.split("\\s*,\\s*");
@@ -140,8 +141,8 @@ public class DataManager {
                 default:
                     return null;
             }
-        } catch (Exception e) {
-            System.out.println("Error parsing line: " + line);
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error parsing line (invalid number or missing data): " + line);
             return null;
         }
     }
@@ -210,7 +211,7 @@ public class DataManager {
                         galaxy.getAge()));
             }
         } catch (IOException e) {
-            System.out.println("Error saving data: " + e.getMessage());
+            System.out.println("Error saving data to " + DATA_FILE + ": " + e.getMessage());
         }
     }
 

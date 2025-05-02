@@ -113,8 +113,8 @@ public class SpaceEncyclopedia {
     }
 
     public static void main(String[] args) throws IOException {
-        Main m = new Main();
-        m.start();
+        SpaceEncyclopedia se = new SpaceEncyclopedia();
+        se.start();
     }
  
 }

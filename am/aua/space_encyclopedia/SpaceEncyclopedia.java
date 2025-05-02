@@ -111,6 +111,8 @@ public class SpaceEncyclopedia {
             else if (command.equals("m")) {
                 System.out.println(showMenuPage());
             }
+            else
+                System.out.println("Invalid input: Please try again.");
         }
 
          System.out.println("Quiting the program. Goodbye!");

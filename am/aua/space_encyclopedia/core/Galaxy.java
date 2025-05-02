@@ -68,10 +68,6 @@ public class Galaxy extends CelestialBody {
         double radiusMeters = (diameter * LIGHT_YEAR_IN_METERS) / 2; // convert light-years to meters
         return Math.sqrt((2 * G * getMass()) / radiusMeters);
     }
-     public void displayInfo() {
-        System.out.println("\n--- Planet Information ---");
-        System.out.println(this);
-    }
     @Override
     public String showFacts(){
         StringBuilder facts = new StringBuilder();

@@ -30,8 +30,11 @@ public class SpaceEncyclopedia {
         System.out.println(showMenuPage());
         BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
         String command = " ";
+        System.out.println("Let's explore the universe!\n");
         while (!(command.equals("q")) ){
             System.out.println("Let's explore the universe!\n");
+            System.out.println("You can explore by inputting l, s <name>, v <name>; input m to go back to main menu;");
+            System.out.println( "or stop the game by inputting q: " );
             command = input.readLine().trim();
             if (command.equals("l")) {
                 System.out.println("\n=== ALL OBJECTS ===");
@@ -68,6 +71,7 @@ public class SpaceEncyclopedia {
                 System.out.println(object); // Basic info
 
                 System.out.println("\nInput 'f' for more facts about " + object.getName());
+                System.out.println("Or input l, s <name>, v <name>; m for main menu; q to quit.");
                 String response = input.readLine().trim();
                 if (response.equals("f")) {
                     System.out.println("\nDETAILED FACTS:");
@@ -100,25 +104,19 @@ public class SpaceEncyclopedia {
                     }
                 }
 
-
                 if (!found) {
-                    System.out.println("No objects found matching: " + term);
+                    System.out.println("Sorry! " + term +" celestial body was not found.");
                 }
             }
-            else if (command.equals("menu")) {
+            else if (command.equals("m")) {
                 System.out.println(showMenuPage());
             }
         }
 
-        System.out.println("Goodbye!");
+         System.out.println("Quiting the program. Goodbye!");
+         System.out.println(showMenuPage()); // Go back to main page
     }
-    private void showMainMenu() {
-        System.out.println("\nMAIN MENU:");
-        System.out.println("1. View All Objects");
-        System.out.println("2. Search Objects");
-        System.out.println("3. Exit");
-    }
-
+   
     public static void main(String[] args) throws IOException {
         SpaceEncyclopedia se = new SpaceEncyclopedia();
         se.start();

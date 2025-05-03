@@ -16,6 +16,9 @@ Planet,Mars,0.000024,6.417e+23,210.00,Terrestrial,Carbon Dioxide,2,Cold and has 
 Planet,Venus,0.000011,4.867e+24,737.00,Terrestrial,Carbon Dioxide,0,Thick sulfuric atmosphere,6051.00
 Planet,Saturn,0.000150,5.683e+26,134.00,Gas Giant,Hydrogen-Helium,82,Prominent ring system,58232.00
 Planet,Neptune,0.000450,1.024e+26,72.00,Ice Giant,Hydrogen-Helium-Methane,14,Windy and icy atmosphere,24622.00
+Planet,Mercury,0.000006,3.301e+23,440.00,Terrestrial,None,0,Rocky and cratered,2439.00
+Planet,Uranus,0.000191,8.681e+25,76.00,Ice Giant,Hydrogen-Helium-Methane,27,Cold with faint rings,25362.00
+Planet,Pluto,0.000591,1.309e+22,44.00,Dwarf,Thin Nitrogen-Methane,5,Rocky and icy surface,1188.00
 Planet,Kepler-22b,600.000000,2.400e+25,295.00,Super-Earth,Unknown,0,Water-rich,12000.00
 Planet,HD 209458 b,159.000000,1.140e+27,1320.00,Hot Jupiter,Hydrogen-Helium,0,Inflated atmosphere,135000.00
 Planet,Gliese 581d,20.300000,1.950e+25,230.00,Super-Earth,Carbon Dioxide,0,Rocky terrain,7000.00

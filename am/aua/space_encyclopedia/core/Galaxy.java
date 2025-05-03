@@ -9,36 +9,29 @@ public class Galaxy extends CelestialBody {
     //constuctor
     public Galaxy(String name, double distanceFromEarth, double mass, double temperature, String type,
               long numberOfStars, double diameter, double age) {
-    super(name, distanceFromEarth, mass, temperature, type);
+        super(name, distanceFromEarth, mass, temperature, type);
 
-    if (numberOfStars < 0)
-        throw new IllegalArgumentException("Number of stars cannot be negative.");
-    if (diameter <= 0)
-        throw new IllegalArgumentException("Diameter must be positive.");
-    if (age <= 0)
-        throw new IllegalArgumentException("Age must be positive.");
+        if (numberOfStars < 0)
+            throw new IllegalArgumentException("Number of stars cannot be negative.");
+        if (diameter <= 0)
+            throw new IllegalArgumentException("Diameter must be positive.");
+        if (age <= 0)
+            throw new IllegalArgumentException("Age must be positive.");
 
-    this.numberOfStars = numberOfStars;
-    this.diameter = diameter;
-    this.age = age;
-}
+        this.numberOfStars = numberOfStars;
+        this.diameter = diameter;
+        this.age = age;
+    
+    }
 
     //copy constructor
     public Galaxy(Galaxy other) {
-    super(
-        other != null ? other.getName() : null,
-        other != null ? other.getDistanceFromEarth() : 0,
-        other != null ? other.getMass() : 0,
-        other != null ? other.getTemperature() : 0,
-        other != null ? other.getType() : null
-    );
-
-    if (other == null)
-        throw new NullPointerException("Cannot copy from a null Galaxy.");
-
-    this.numberOfStars = other.numberOfStars;
-    this.diameter = other.diameter;
-    this.age = other.age;
+        super(other.getName(), other.getDistanceFromEarth(), other.getMass(), other.getTemperature(), other.getType());
+        if (other == null)
+            throw new NullPointerException("Cannot copy from a null Galaxy.");
+        this.numberOfStars = other.numberOfStars;
+        this.diameter = other.diameter;
+        this.age = other.age;
 }
    
     //accessors

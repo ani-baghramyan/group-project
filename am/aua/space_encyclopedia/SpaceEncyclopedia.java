@@ -30,10 +30,9 @@ public class SpaceEncyclopedia {
         System.out.println(showMenuPage());
         BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
         String command = " ";
-        System.out.println("Let's explore the universe!\n");
         while (!(command.equals("q")) ){
             try {
-               System.out.println("Let's explore the universe!\n");
+               System.out.println("\nLet's explore the universe!\n");
                System.out.println("You can explore by inputting l, s <name>, v <name>; input m to go back to main menu;");
                System.out.println( "or stop the game by inputting q: " );
                command = input.readLine().trim();

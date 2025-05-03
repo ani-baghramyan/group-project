@@ -123,19 +123,20 @@ public class SpaceEncyclopedia {
                else
                    System.out.println("Invalid input: Please try again.");
            }
-        } catch (IOException e) {
-            System.out.println("An error occurred while reading input. Please try again.");
-        } catch (StringIndexOutOfBoundsException e) {
-            System.out.println("Missing name after command. Use format like: s Mars or v Earth.");
-        } catch (Exception e) {
-            System.out.println("An unexpected error occurred: " + e.getMessage());
-        }
+           catch (IOException e) {
+                System.out.println("An error occurred while reading input. Please try again.");
+            } 
+            catch (StringIndexOutOfBoundsException e) {
+                System.out.println("Missing name after command. Use format like: s Mars or v Earth.");
+            }
+            catch (Exception e) {
+                System.out.println("An unexpected error occurred: " + e.getMessage());
+            }
+        } 
+        System.out.println("Quiting the program. Goodbye!");
+        System.out.println(showMenuPage());
     }
    
-         System.out.println("Quiting the program. Goodbye!");
-         System.out.println(showMenuPage()); // Go back to main page
-    } 
-    
    public static void main(String[] args) {
     try {
         SpaceEncyclopedia se = new SpaceEncyclopedia();

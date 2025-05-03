@@ -29,7 +29,7 @@ public CelestialBody(String name, double distanceFromEarth, double mass, double 
 
 public CelestialBody(CelestialBody other) {
     if (other == null)
-        throw new NullPointerException("Cannot copy from a null CelestialBody.");
+        throw new IllegalArgumentException("Cannot copy from a null CelestialBody.");
 
     this.name = other.name;
     this.distanceFromEarth = other.distanceFromEarth;

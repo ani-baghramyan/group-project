@@ -3,31 +3,11 @@ import java.io.*;
 import am.aua.space_encyclopedia.core.*;
 import am.aua.space_encyclopedia.data.*;
 
-/*
- * This is the main class for the Space Encyclopedia application.
- * 
- * It runs a console-based interface where users can explore celestial bodies like
- * stars, planets, and galaxies. You can list all known objects, search by name,
- * or dive into detailed information about specific ones.
- * 
- * The app uses a DataManager to load and fetch data about celestial objects.
- */
-
 public class SpaceEncyclopedia {
-    /* Handles loading and retrieving data about stars, planets, and galaxies */
    private  DataManager dataManager;
-/*
-     * Constructor that sets up the Space Encyclopedia.
-     * Initializes the data manager so the app is ready to use.
-     */
     public SpaceEncyclopedia() {
         this.dataManager = new DataManager();
     }
-
-   /*
-     * Builds and returns the main menu text that users see when they start the app. 
-     * @return The formatted menu as a string
-     */
     public String showMenuPage() {
         StringBuilder menu = new StringBuilder();
 
@@ -44,12 +24,7 @@ public class SpaceEncyclopedia {
         menu.append("Tip: Use full names like 'Sun' or 'Andromeda' when searching.\n");
         return menu.toString();
     }
-   /*
-     * Here the application starts running.
-     * It loops, waiting for user commands and responding accordingly.
-     * User can explore data, search for objects, and read facts.
-     * @throws IOException if there is a problem reading user input
-     */
+  
     public void start() throws IOException {
         System.out.println(showMenuPage());
         BufferedReader input = new BufferedReader (new InputStreamReader(System.in));
@@ -163,11 +138,6 @@ public class SpaceEncyclopedia {
         System.out.println("Quiting the program. Goodbye!");
         System.out.println(showMenuPage());
     }
-    /*
-     * This is the main method that kicks everything off.
-     * It creates an instance of the app and starts the main loop.
-     * @param args Not used here
-     */
    public static void main(String[] args) {
     try {
         SpaceEncyclopedia se = new SpaceEncyclopedia();

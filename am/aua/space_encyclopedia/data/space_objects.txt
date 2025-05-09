@@ -31,6 +31,16 @@ Star,Alnilam,2000.000000,3.800e+31,27500.00,B,Blue-White,275000.00,240000000.00
 Star,Saiph,650.000000,2.500e+31,26000.00,B,Blue-White,58000.00,220000000.00
 Star,Canopus,310.000000,2.000e+31,7350.00,F,Yellow-White,10500.00,71400000.00
 Star,Mintaka,1200.000000,3.200e+31,31800.00,O,Blue,19000.00,10800000.00
+Star,UY Scuti,5100.0,30.0,3650.0,M Supergiant,40.0,One of the largest known stars
+Star,WR 102,11000.0,25.0,210000.0,WO,20.0,Fastest known rotating star with extreme temperature
+Star,2MASS J0523-1403,40.0,0.08,2070.0,M Dwarf,0.001,Dimmest known star still sustaining fusion
+Star,Deneb,2600.0,19.0,8525.0,A Supergiant,200000.0,Very luminous and distant bright star
+Star,Gliese 229A,19.0,0.58,3700.0,M Dwarf,0.013,Low-mass star with a known brown dwarf companion
+Star,R136a1,50000.0,4.800e+31,53000.0,WN5h,Blue Hypergiant,8700000.0,One of the most massive known stars
+Star,Wolf 359,7.780000,2.200e+29,2800.0,M,Red Dwarf,0.0015,Faint, nearby flare star
+Star,Epsilon Eridani,10.520000,1.160e+30,5146.0,K,Orange,0.34,Young star with a debris disk
+Star,VY Canis Majoris,3900.000000,2.000e+31,3490.0,M,Red Hypergiant,1420000.0,Extremely large and luminous
+Star,Luyten's Star,12.360000,3.500e+29,3150.0,M,Red Dwarf,0.008,Nearby low-mass star with exoplanets
 Planet,Earth,0.000016,5.972e+24,288.00,Terrestrial,Nitrogen-Oxygen,1,Rocky with water,6371.00
 Planet,Jupiter,0.000082,1.898e+27,165.00,Gas Giant,Hydrogen-Helium,79,Thick atmosphere with Great Red Spot,69911.00
 Planet,Mars,0.000024,6.417e+23,210.00,Terrestrial,Carbon Dioxide,2,Cold and has dry desert with ice caps,3389.00
@@ -72,6 +82,11 @@ Planet,Gliese 876 d,15.000000,6.830e+24,430.00,Super-Earth,Hydrogen-Helium,0,Clo
 Planet,HD 40307 g,42.000000,7.100e+24,278.00,Super-Earth,Unknown,0,Potentially habitable orbit,6800.00
 Planet,Kepler-69c,2700.000000,6.000e+24,299.00,Super-Earth,Unknown,0,Possible water world,7800.00
 Planet,Kepler-1652b,822.000000,5.900e+24,289.00,Terrestrial,Unknown,0,Earth-sized exoplanet,6100.00
+Planet,K2-18b,124.000000,8.630e+24,282.00,Mini-Neptune,Hydrogen-Helium-Water Vapor,0,May host liquid water beneath thick atmosphere,9000.00
+Planet,Kepler-1649c,301.000000,5.100e+24,234.00,Terrestrial,Unknown,0,Earth-sized and orbits in habitable zone,6200.00
+Planet,HD 219134 b,21.000000,4.460e+24,1010.00,Super-Earth,Unknown,0,Extremely hot and close to star,5100.00
+Planet,LP 890-9 c,105.000000,5.400e+24,270.00,Terrestrial,Unknown,0,Possibly rocky and temperate,6550.00
+Planet,Kepler-138d,219.000000,1.550e+25,276.00,Mini-Neptune,Water-Rich,0,Substantial water content expected,8800.00
 Galaxy,Andromeda,2537000.000000,1.230e+42,0.00,Spiral,1000000000000,220000.00,10.00
 Galaxy,Milky Way,0.000000,1.500e+42,0.00,Spiral,250000000000,105700.00,13.51
 Galaxy,Triangulum,2730000.000000,5.000e+41,0.00,Spiral,40000000000,60000.00,12.00

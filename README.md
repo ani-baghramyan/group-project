@@ -50,3 +50,9 @@ Manages all celestial object data:
 - Saves all data back to file in a structured format
 - Maintains separate, sorted collections for stars, planets, and galaxies
 - Provides search functionality by name for all celestial types
+
+## Authors
+- Arevik Shahinyan
+- Lina Margaryan
+- Ani Baghramyan
+

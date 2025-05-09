@@ -5,10 +5,25 @@ import java.util.ArrayList;
 import am.aua.space_encyclopedia.core.*;
 
 /**
- * The DataManager class manages collections of celestial objects (Stars, Planets, Galaxies), handles their persistence to and from a text file, and provides search and add functionality.
+ * The DataManager class manages collections of celestial objects (Stars, Planets, Galaxies), 
+ * handles their persistence to and from a text file, and provides search and add functionality.
+  * <p>
+ * An object of type {@code DataManager} contains:
+ * <ul>
+ *   <li>Fields of type {@link ArrayList} for storing collections of stars, planets, and galaxies in the system:
+ *     <ul>
+ *       <li>{@link #stars} - List of {@link Star} objects representing the stars in the system.</li>
+ *       <li>{@link #planets} - List of {@link Planet} objects representing the planets in the system.</li>
+ *       <li>{@link #galaxies} - List of {@link Galaxy} objects representing the galaxies in the system.</li>
+ *     </ul>
+ *   </li>
+ * </ul>
  */
 
 public class DataManager {
+    /**
+     * The path to the file where celestial objects are stored.
+     */
     private static final String DATA_FILE = "am/aua/space_encyclopedia/data/space_objects.txt";
     
     private ArrayList<Star> stars;

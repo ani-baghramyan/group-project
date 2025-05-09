@@ -9,6 +9,14 @@ import am.aua.space_encyclopedia.data.DataManager;
 /**
  * The main GUI application window for the Space Encyclopedia.
  * This class initializes and manages the layout and panels of the application.
+ * <p>
+ * An object of type {@code GUISpaceEncyclopedia} contains:
+ * <ul>
+ *   <li>A field of type {@link DataManager} to manage celestial body data.</li>
+ *   <li>A field of type {@link CardLayout} to handle layout switching between panels.</li>
+ *   <li>A field of type {@link JPanel} to contain the main panels and manage navigation.</li>
+ *   <li>Fields of type {@link BrowsePanel}, {@link SearchPanel}, and {@link DetailsPanel} to represent the different panels in the application.</li>
+ * </ul>
  */
 public class GUISpaceEncyclopedia extends JFrame {
     private DataManager dataManager;

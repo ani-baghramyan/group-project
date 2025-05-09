@@ -1,8 +1,8 @@
 package am.aua.space_encyclopedia.core;
 /**
-*Represents a star in the space encyclopedia.
- * A star is a luminous sphere of plasma held together by gravity and undergoes nuclear fusion.
- * This class extends CelestialBody and adds attributes like color, luminosity, and size.
+   * Represents a star in the space encyclopedia.
+   * A star is a luminous sphere of plasma held together by gravity and undergoes nuclear fusion.
+   * This class extends CelestialBody and adds attributes like color, luminosity, and size.
  */
 public class Star extends CelestialBody {
       public static final double SUN_MASS_KG = 1.989e30; // in kg
@@ -13,17 +13,17 @@ public class Star extends CelestialBody {
       private double luminosity;  //relative to the Sun
       private double size;       //relative to the Sun
  /**
-      *Constructs a new Star object with specified properties.
-     * @param name - the name of the star
+     * Constructs a new Star object with specified properties.
+     * @param name  the name of the star
      * @param distanceFromEarth the distance from Earth in light-years
-     * @param mass - the mass of the star in kilograms
-     * @param temperature - surface temperature in Kelvin
-     * @param type - the type or category of star
-     * @param color - visual color of the star
-     * @param luminosity - brightness relative to the Sun
-     * @param size - size relative to the Sun
-     * @throws IllegalArgumentException - if color is null/empty, or if luminosity/size is non-positive
-     */
+     * @param mass  the mass of the star in kilograms
+     * @param temperature  surface temperature in Kelvin
+     * @param type  the type or category of star
+     * @param color  visual color of the star
+     * @param luminosity  brightness relative to the Sun
+     * @param size  size relative to the Sun
+     * @throws IllegalArgumentException  if color is null/empty, or if luminosity/size is non-positive
+*/
       public Star(String name, double distanceFromEarth, double mass, double temperature, String type,
             String color, double luminosity, double size) {
           super(name, distanceFromEarth, mass, temperature, type);
@@ -40,9 +40,9 @@ public class Star extends CelestialBody {
           this.size = size;
       }
  /**
-     *Copy constructor for a Star object.
+     * Copy constructor for a Star object.
      * @param other the Star object to copy
-     * @throws NullPointerException - if the provided Star is null
+     * @throws NullPointerException  if the provided Star is null
      */
 
       public Star(Star other) {
@@ -53,28 +53,28 @@ public class Star extends CelestialBody {
           this.luminosity = other.luminosity;
           this.size = other.size;
       }
-     /**
+/**
      *@return the color of the star
-     */
+*/
       public String getColor() {
             return color;
       }
-      /**
+/**
       *@return the luminosity of the star (relative to the Sun) 
-      */
+*/
       public double getLuminosity() {
             return luminosity;
       }
-      /**
+/**
       *@return the size of the star (relative to the Sun) 
-      */
+*/
       public double getSize() {
             return size;
       }
-      /**
-     *Returns a formatted string representation of this star.
+/**
+     * Returns a formatted string representation of this star.
      * @return a human readable summary of the star's properties
-     */
+*/
       @Override
       public String toString() {
             return String.format(
@@ -89,10 +89,10 @@ public class Star extends CelestialBody {
             );
       }
 /**
-     *Checks if this star is equal to another object by name (case-insensitive).
+     * Checks if this star is equal to another object by name (case-insensitive).
      * @param otherObject the object to compare
      * @return true if both are stars with the same name
-     */
+*/
       @Override
       public boolean equals(Object otherObject){
             if (otherObject == null)
@@ -105,9 +105,9 @@ public class Star extends CelestialBody {
             }
       }
 /**
-      *Provides extended information about the star, such as classification and lifecycle.
+     * Provides extended information about the star, such as classification and lifecycle.
      * @return a string containing additional star facts
-     */
+*/
        public String showFacts() {
              StringBuilder facts = new StringBuilder();
               facts.append("\nMORE STAR FACTS:\n");
@@ -123,9 +123,9 @@ public class Star extends CelestialBody {
               return facts.toString();
        }
 /**
-      *Classifies the star based on its surface temperature and luminosity.
+     * Classifies the star based on its surface temperature and luminosity.
      * @return a string representing the spectral type and luminosity class
-     */
+*/
       public String classifyStar() {
             String spectralType;
 
@@ -147,9 +147,9 @@ public class Star extends CelestialBody {
       }
 
 /**
-     *Categorizes the star into a luminosity class based on its luminosity.
+     * Categorizes the star into a luminosity class based on its luminosity.
      * @return a string representing the luminosity class
-     */
+*/
      public String classifyLuminosity() {
         if (luminosity >= 30000)
             return "I (Supergiant)";
@@ -164,9 +164,9 @@ public class Star extends CelestialBody {
         else return "VII (White Dwarf)";
      }
 /**
-     *Estimates the life stage of the star based on its mass.
+     * Estimates the life stage of the star based on its mass.
      * @return a string representing the current evolutionary stage
-     */
+*/
      public String calculateLifeStage() {
         double massInKg = getMass();  // mass in kg
         double massInSolarMasses = massInKg / SUN_MASS_KG;
@@ -181,10 +181,10 @@ public class Star extends CelestialBody {
             return "High-Mass Main Sequence Star";
      }
 /**
-      *Calculates the absolute magnitude using the star's luminosity.
+     * Calculates the absolute magnitude using the star's luminosity.
      * @return the absolute magnitude of the star
      * @throws IllegalArgumentException - if luminosity is not positive
-     */
+*/
      public double calculateAbsoluteMagnitude() {
         if (luminosity <= 0) {
             throw new IllegalArgumentException("Luminosity must be greater than zero to calculate magnitude.");
@@ -192,9 +192,9 @@ public class Star extends CelestialBody {
         return SUN_ABSOLUTE_MAGNITUDE - 2.5 * Math.log10(luminosity);
      }
 /**
-     *Estimates the duration the star will spend on the main sequence.
+     * Estimates the duration the star will spend on the main sequence.
      * @return the lifespan in billion years
-     */
+*/
     public double estimateMainSequenceLifespan() {
         double massInKg = getMass(); // getMass() must return kg
         double massRatio = massInKg / SUN_MASS_KG;

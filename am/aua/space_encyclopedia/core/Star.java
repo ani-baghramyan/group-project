@@ -63,18 +63,21 @@ public class Star extends CelestialBody {
           this.size = other.size;
       }
 /**
+     *Gets the visual color classification of the star.
      *@return the color of the star
 */
       public String getColor() {
             return color;
       }
 /**
+      * Gets the star's luminosity relative to our Sun.
       *@return the luminosity of the star (relative to the Sun) 
 */
       public double getLuminosity() {
             return luminosity;
       }
 /**
+      * Gets the star's size relative to our Sun.
       *@return the size of the star (relative to the Sun) 
 */
       public double getSize() {

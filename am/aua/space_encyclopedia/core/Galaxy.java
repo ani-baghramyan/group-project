@@ -2,16 +2,16 @@ package am.aua.space_encyclopedia.core;
 import java.util.ArrayList;
 
 /**
-   * Represents a galaxy in the space encyclopedia.
-   * A galaxy is a massive system consisting of stars, gas, dust, and dark matter—held together by gravity.
-   * This class extends the CelestialBody class and adds galaxy-specific attributes like number of stars, diameter, and age.
-   * <p>
-   * An object of type {@code Galaxy} contains:
-   * <ul>
-   *   <li>{@link #numberOfStars} - A field of type {@link long} representing the estimated number of stars in the galaxy.</li>
-   *   <li>{@link #diameter} - A field of type {@link double} representing the diameter of the galaxy in light-years.</li>
-   *   <li>{@link #age} - A field of type {@link double} representing the age of the galaxy in billions of years.</li>
-   * </ul>
+ * Represents a galaxy in the space encyclopedia.
+ * A galaxy is a massive system consisting of stars, gas, dust, and dark matter—held together by gravity.
+ * This class extends the <code>CelestialBody</code> class and adds galaxy-specific attributes like number of stars, diameter, and age.
+ * <p>
+ * An object of type <code>Galaxy</code> contains:
+ * <ul>
+ *   <li><code>numberOfStars</code> - Estimated number of stars in the galaxy</li>
+ *   <li><code>diameter</code> - Diameter of the galaxy in light-years</li>
+ *   <li><code>age</code> - Age of the galaxy in billions of years</li>
+ * </ul>
  */
 
 public class Galaxy extends CelestialBody {

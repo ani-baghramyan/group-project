@@ -6,6 +6,10 @@ import am.aua.space_encyclopedia.core.*;
 import am.aua.space_encyclopedia.gui.*;
 import am.aua.space_encyclopedia.data.DataManager;
 
+/**
+ * The main GUI application window for the Space Encyclopedia.
+ * This class initializes and manages the layout and panels of the application.
+ */
 public class GUISpaceEncyclopedia extends JFrame {
     private DataManager dataManager;
     private CardLayout cardLayout;
@@ -14,6 +18,10 @@ public class GUISpaceEncyclopedia extends JFrame {
     private DetailsPanel detailsPanel;
     private BrowsePanel browsePanel;
 
+    /**
+     * Constructs the main window for the Space Encyclopedia GUI.
+     * Initializes the panels and sets up layout switching with CardLayout.
+     */
     public GUISpaceEncyclopedia() {
         super("Space Encyclopedia");
         this.dataManager = new DataManager();
@@ -42,12 +50,19 @@ public class GUISpaceEncyclopedia extends JFrame {
         cardLayout.show(mainPanel, "MENU");
     }
 
-
+    /**
+     * Displays the details panel for the given celestial body.
+     * @param body The celestial body whose details are to be shown.
+     */
     private void showDetailsPanel(CelestialBody body) {
         detailsPanel.displayDetails(body);
         cardLayout.show(mainPanel, "DETAILS");
     }
 
+    /**
+     * Creates the main menu panel with navigation buttons.
+     * @return A JPanel representing the main menu.
+     */
     private JPanel createMenuPanel() {
         return new MenuPanel(
                 e ->  cardLayout.show(mainPanel, "BROWSE"),
@@ -56,6 +71,10 @@ public class GUISpaceEncyclopedia extends JFrame {
         );
     }
 
+    /**
+     * Retrieves the selected object name from the search panel, locates the corresponding celestial body, and displays its details.
+     * Shows an error or warning dialog if selection or lookup fails.
+     */
     private void showSelectedObject() {
         String selected = searchPanel.getSelectedObjectName();
         if (selected != null) {
@@ -64,11 +83,15 @@ public class GUISpaceEncyclopedia extends JFrame {
                 showDetailsPanel(body);
             else
                 JOptionPane.showMessageDialog(this, "Celestial body not found.", "Error", JOptionPane.ERROR_MESSAGE);
-
-        } else
+        } else {
             JOptionPane.showMessageDialog(this, "Please select an item first.", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
+    /**
+     * Launches the Space Encyclopedia GUI.
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         GUISpaceEncyclopedia gui = new GUISpaceEncyclopedia();
         gui.setVisible(true);

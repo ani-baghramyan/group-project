@@ -9,8 +9,19 @@ import java.awt.event.*;
 import java.util.*;
 
 /**
- * Represents the search panel UI of the Space Encyclopedia application.
- * Allows users to search for celestial bodies by name and view results.
+ * The <code>SearchPanel</code> class represents the search panel UI of the Space Encyclopedia application.
+ * It allows users to search for celestial bodies by name and view results.
+ * It contains a text field for search input, a list to display results, and buttons for navigating 
+ * to the main menu or viewing details of a selected object.
+ * An object of type <code>SearchPanel</code> contains:
+ * <ul>
+ *   <li>A field of type <code>DataManager</code> to manage celestial objects.</li>
+ *   <li>A field of type <code>ActionListener</code> for navigating back to the main menu.</li>
+ *   <li>A field of type <code>ActionListener</code> for viewing details of selected objects.</li>
+ *   <li>A field of type <code>JTextField</code> to input the search term.</li>
+ *   <li>A field of type <code>JList&lt;String&gt;</code> to display the search results.</li>
+ *   <li>A field of type <code>DefaultListModel&lt;String&gt;</code> to manage the list model of results.</li>
+ * </ul>
  */
 
 public class SearchPanel extends JPanel {

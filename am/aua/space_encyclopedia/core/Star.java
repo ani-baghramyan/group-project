@@ -5,13 +5,13 @@ package am.aua.space_encyclopedia.core;
  * This class extends CelestialBody and adds attributes like color, luminosity, and size.
  */
 public class Star extends CelestialBody {
-      public static final double SUN_MASS_KG = 1.989e30;// in kg
+      public static final double SUN_MASS_KG = 1.989e30; // in kg
       public static final double SUN_ABSOLUTE_MAGNITUDE = 4.83; // in V band
-      public static final double SUN_LIFESPAN = 10;// in billion years
+      public static final double SUN_LIFESPAN = 10;  // in billion years
       
       private String color;
-      private double luminosity; //relative to the Sun
-      private double size;//relative to the Sun
+      private double luminosity;  //relative to the Sun
+      private double size;       //relative to the Sun
  /**
       *Constructs a new Star object with specified properties.
      * @param name - the name of the star
@@ -111,15 +111,15 @@ public class Star extends CelestialBody {
        public String showFacts() {
              StringBuilder facts = new StringBuilder();
               facts.append("\nMORE STAR FACTS:\n");
-              facts.append("- ").append(getName()).append("star.\n");
+              facts.append("\n- ").append(getName()).append(" is a shining body in space!\n");
               facts.append("\nSTELLAR AND PHYSICAL CLASSIFICATION:\n");
-              facts.append("- Spectral Type: ").append(classifyStar()).append("\n");
-              facts.append(String.format("- Absolute Magnitude: %.2f\n", calculateAbsoluteMagnitude()));
+              facts.append("- Spectral Type: ").append(classifyStar());
+              facts.append(String.format("\n- Absolute Magnitude: %.2f\n", calculateAbsoluteMagnitude()));
               facts.append("\nLIFECYCLE INFORMATION:\n");
-              facts.append("- Current Stage: ").append(calculateLifeStage()).append("\n");
-              facts.append(String.format("- Main Sequence Lifespan: %.1f billion years\n",
+              facts.append("- Current Stage: ").append(calculateLifeStage());
+              facts.append(String.format("\n- Main Sequence Lifespan: %.1f billion years\n",
                       estimateMainSequenceLifespan()));
-      
+             
               return facts.toString();
        }
 /**

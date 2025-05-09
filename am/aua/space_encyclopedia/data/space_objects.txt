@@ -20,6 +20,11 @@ Star,Mimosa,350.000000,2.000e+31,27700.00,B,Blue-White,34000.00,87000000.00
 Star,Alnilam,2000.000000,3.800e+31,27500.00,B,Blue-White,275000.00,240000000.00
 Star,Saiph,650.000000,2.500e+31,26000.00,B,Blue-White,58000.00,220000000.00
 Star,Canopus,310.000000,2.000e+31,7350.00,F,Yellow-White,10500.00,71400000.00
+Star,Deneb,2600.000000,2.000e+31,8525.00,A,White,196000.00,203000000.00
+Star,Altair,16.700000,3.000e+30,7550.00,A,White,10.60,1690000.00
+Star,Spica,250.000000,1.020e+31,25400.00,B,Blue-White,22300.00,10800000.00
+Star,Canopus,310.000000,1.100e+31,7350.00,F,Yellow-White,10700.00,71500000.00
+Star,Mintaka,1200.000000,3.200e+31,31800.00,O,Blue,19000.00,10800000.00
 Planet,Earth,0.000016,5.972e+24,288.00,Terrestrial,Nitrogen-Oxygen,1,Rocky with water,6371.00
 Planet,Jupiter,0.000082,1.898e+27,165.00,Gas Giant,Hydrogen-Helium,79,Thick atmosphere with Great Red Spot,69911.00
 Planet,Mars,0.000024,6.417e+23,210.00,Terrestrial,Carbon Dioxide,2,Cold and has dry desert with ice caps,3389.00

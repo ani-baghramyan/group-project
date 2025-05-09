@@ -35,6 +35,16 @@ Planet,Gliese 581d,20.300000,1.950e+25,230.00,Super-Earth,Carbon Dioxide,0,Rocky
 Planet,Titan,0.000148,1.345e+23,94.00,Terrestrial,Nitrogen-Methane,0,Thick haze and hydrocarbon lakes,2575.00
 Planet,Europa,0.000079,4.800e+22,102.00,Icy Moon,Oxygen,0,Ice crust over ocean,1560.00
 Planet,Kepler-452b,1400.000000,5.972e+24,265.00,Super-Earth,Unknown,0,Rocky surface,10000.00
+Planet,Trappist-1e,39.000000,4.800e+24,251.00,Terrestrial,Unknown,0,Possible rocky surface,5790.00
+Planet,GJ 1214 b,40.000000,6.500e+24,393.00,Mini-Neptune,Hydrogen-Helium,0,Thick steamy atmosphere,13800.00
+Planet,55 Cancri e,41.000000,8.080e+24,2400.00,Super-Earth,Carbon-Rich,0,Lava-covered,9200.00
+Planet,Kepler-186f,492.000000,5.000e+24,188.00,Terrestrial,Unknown,0,Earth-sized in habitable zone,6370.00
+Planet,WASP-12b,870.000000,2.460e+27,2500.00,Hot Jupiter,Hydrogen-Helium,0,Very close to star and dark,132000.00
+Planet,HD 189733 b,64.500000,1.140e+27,1200.00,Hot Jupiter,Hydrogen-Helium,0,Silicate rain and fast winds,121000.00
+Planet,OGLE-2005-BLG-390Lb,21500.000000,5.500e+24,50.00,Terrestrial,Unknown,0,Cold and distant,7700.00
+Planet,LHS 1140 b,41.000000,6.600e+24,230.00,Super-Earth,Unknown,0,Potentially habitable,11300.00
+Planet,TOI 700 d,101.000000,5.720e+24,268.00,Terrestrial,Unknown,0,In habitable zone,7200.00
+Planet,Gliese 667 Cc,22.100000,6.000e+24,277.00,Super-Earth,Carbon Dioxide,0,Potential liquid water,9100.00
 Galaxy,Andromeda,2537000.000000,1.230e+42,0.00,Spiral,1000000000000,220000.00,10.00
 Galaxy,Milky Way,0.000000,1.500e+42,0.00,Spiral,250000000000,105700.00,13.51
 Galaxy,Triangulum,2730000.000000,5.000e+41,0.00,Spiral,40000000000,60000.00,12.00

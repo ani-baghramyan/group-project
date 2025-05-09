@@ -67,6 +67,11 @@ Planet,TRAPPIST-1d,40.000000,3.400e+24,282.00,Terrestrial,Unknown,0,Potentially 
 Planet,Kepler-20e,950.000000,3.000e+24,1040.00,Terrestrial,Unknown,0,Very hot rocky exoplanet,5600.00
 Planet,HD 106906 b,650.000000,1.000e+29,150.00,Gas Giant,Hydrogen-Helium,0,Massive and distant,90000.00
 Planet,Wolf 1061c,13.800000,5.100e+24,223.00,Super-Earth,Unknown,0,Potential for liquid water,6700.00
+Planet,Kepler-442b,1206.000000,2.360e+24,233.00,Super-Earth,Unknown,0,In habitable zone with rocky terrain,5700.00
+Planet,Gliese 876 d,15.000000,6.830e+24,430.00,Super-Earth,Hydrogen-Helium,0,Close-in and hot,5900.00
+Planet,HD 40307 g,42.000000,7.100e+24,278.00,Super-Earth,Unknown,0,Potentially habitable orbit,6800.00
+Planet,Kepler-69c,2700.000000,6.000e+24,299.00,Super-Earth,Unknown,0,Possible water world,7800.00
+Planet,Kepler-1652b,822.000000,5.900e+24,289.00,Terrestrial,Unknown,0,Earth-sized exoplanet,6100.00
 Galaxy,Andromeda,2537000.000000,1.230e+42,0.00,Spiral,1000000000000,220000.00,10.00
 Galaxy,Milky Way,0.000000,1.500e+42,0.00,Spiral,250000000000,105700.00,13.51
 Galaxy,Triangulum,2730000.000000,5.000e+41,0.00,Spiral,40000000000,60000.00,12.00

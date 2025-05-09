@@ -8,14 +8,14 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 /**
- * {@code BrowsePanel} is a custom JPanel that allows users to browse and select different types of celestial bodies
- * (Stars, Planets, Galaxies) from the space encyclopedia. It features a back button, categorized lists of celestial bodies,
- * and a scrollable display for each category.
- *<p>
- * An object of type {@code BrowsePanel} contains:
+ * <code>BrowsePanel</code> is a custom <code>JPanel</code> for browsing celestial bodies.
+ * Displays categorized lists of <code>Star</code>s, <code>Planet</code>s, and <code>Galaxy</code>s
+ * with scrollable views and back navigation.
+ * <p>
+ * Contains:
  * <ul>
- *   <li>A field of type {@link DataManager} to manage the celestial body data.</li>
- *   <li>A field of type {@link ActionListener} that listens for the back button click event.</li>
+ *   <li><code>DataManager</code> - Handles celestial body data</li>
+ *   <li><code>ActionListener</code> - Handles back button clicks</li>
  * </ul>
  */
 public class BrowsePanel extends JPanel {

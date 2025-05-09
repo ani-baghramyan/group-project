@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 /**
- * {@code MenuButton} is a custom JButton with a rounded, styled appearance
+ * <code>MenuButton</code> is a custom JButton with a rounded, styled appearance
  * used in the Space Encyclopedia GUI. It features custom colors,
  * mouse hover effects, and a space-themed look that matches the UI.
  */

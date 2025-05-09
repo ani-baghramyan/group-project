@@ -48,7 +48,10 @@ public class DataManager {
      * @param newStar the star to add
      */
     public void addStar(Star newStar) {
-     insertInOrder(stars, newStar);
+        if (newStar == null) 
+            throw new IllegalArgumentException("Planet cannot be null");
+        if (!stars.contains(newStar)) 
+            insertInOrder(stars, newStar);
     }
 /**
 *Adds a planet to the collection in sorted order based on natural ordering.
@@ -56,14 +59,20 @@ public class DataManager {
      */
     
     public void addPlanet(Planet newPlanet) {
-        insertInOrder(planets, newPlanet);
+         if (newPlanet == null) 
+            throw new IllegalArgumentException("Planet cannot be null");
+        if (!planets.contains(newPlanet)) 
+            insertInOrder(planets, newPlanet);
     }
 /**
 *Adds a galaxy to the collection in sorted order based on natural ordering.
      * @param newGalaxy the galaxy to add
      */
     public void addGalaxy(Galaxy newGalaxy) {
-        insertInOrder(galaxies, newGalaxy);
+        if (newGalaxy == null) 
+            throw new IllegalArgumentException("Planet cannot be null");
+        if (!galaxies.contains(newGalaxy)) 
+            insertInOrder(galaxies, newGalaxy);
     }
     /**
     *Inserts an object into the given list maintaining ascending order using compareTo().

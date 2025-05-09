@@ -5,19 +5,30 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * {@code DetailsPanel} is a custom JPanel that displays detailed information
+ * about a selected {@link CelestialBody}. It includes a styled header,
+ * a back button with hover effect, and a scrollable text area to show content.
+ */
+
 public class DetailsPanel extends JPanel {
     private static final int MIN_WIDTH = 400;
     private static final int MIN_HEIGHT = 300;
-
-    // Static final constants for  colors
+  
+    /** Default button background color. */
     public static final Color BUTTON_COLOR = new Color(120, 170, 230);
+    /** Hover color used when mouse hovers over buttons. */
     public static final Color HOVER_COLOR = new Color(150, 200, 255);
-    private static final Color BACKGROUND_COLOR = new Color(240, 244, 250); // Background color for panels
+    /** Background color for the panel. */
+    private static final Color BACKGROUND_COLOR = new Color(240, 244, 250); 
 
 
     private ActionListener backToSearchListener;
     private JTextArea detailsArea;
-
+    /**
+     * Constructs a {@code DetailsPanel} with the specified back navigation action.
+     * @param backToSearchListener the listener triggered when the back button is clicked
+     */
     public DetailsPanel(ActionListener backToSearchListener) {
         this.backToSearchListener = backToSearchListener;
         setLayout(new BorderLayout());
@@ -26,7 +37,10 @@ public class DetailsPanel extends JPanel {
         add(createHeaderPanel(), BorderLayout.NORTH);
         add(createContentPanel(), BorderLayout.CENTER);
     }
-
+    /**
+     * Creates the header panel containing the back button and the title.
+     * @return the constructed header panel
+     */
     private JPanel createHeaderPanel() {
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(new Color(91, 139, 216));
@@ -43,6 +57,10 @@ public class DetailsPanel extends JPanel {
 
         return headerPanel;
     }
+    /**
+     * Creates a styled back button with hover effects and action listener.
+     * @return the configured back button
+     */
 
     private JButton createBackButton() {
         JButton backButton = new JButton("← Back to Search");
@@ -64,7 +82,10 @@ public class DetailsPanel extends JPanel {
 
         return backButton;
     }
-
+    /**
+     * Applies consistent styling to a button.
+     * @param button the button to style
+     */
     private void styleButton(JButton button) {
         button.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         button.setForeground(Color.WHITE);
@@ -72,7 +93,10 @@ public class DetailsPanel extends JPanel {
         button.setFocusPainted(false);
         button.setBorder(BorderFactory.createEmptyBorder(6, 16, 6, 16));
     }
-
+    /**
+     * Creates the content panel containing a white scrollable box with text.
+     * @return the configured content panel
+     */
     private JPanel createContentPanel() {
         JPanel contentPanel = new JPanel(new GridBagLayout());
         contentPanel.setBackground(BACKGROUND_COLOR);
@@ -104,7 +128,9 @@ public class DetailsPanel extends JPanel {
 
         return contentPanel;
     }
-
+    /**
+     * Configures the appearance and behavior of the text area that shows celestial body details.
+     */
     private void configureDetailsArea() {
         detailsArea.setFont(new Font("Segoe UI", Font.PLAIN, 15));
         detailsArea.setEditable(false);
@@ -113,7 +139,9 @@ public class DetailsPanel extends JPanel {
         detailsArea.setBackground(Color.WHITE);
         detailsArea.setForeground(Color.DARK_GRAY);
     }
-
+    /**
+     * Adds a listener that ensures the panel size doesn't go below a minimum size.
+     */
     private void setupResizeListener() {
         addComponentListener(new ComponentAdapter() {
             @Override
@@ -130,7 +158,10 @@ public class DetailsPanel extends JPanel {
             }
         });
     }
-
+    /**
+     * Displays detailed information about a given celestial body in the text area.
+     * @param body the celestial body to display information about
+     */
     public void displayDetails(CelestialBody body) {
         if (body == null) {
             detailsArea.setText("No celestial body data available.");

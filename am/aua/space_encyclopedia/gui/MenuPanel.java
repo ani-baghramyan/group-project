@@ -10,8 +10,46 @@ import javax.swing.*;
  * It also features a gradient space-themed background with randomly
  * generated animated stars, and adjusts UI element sizes dynamically
  * based on the window width.
+ 
+ * An object of type <code>MenuPanel</code> contains a field of type <code>JLabel</code> 
+ * for the title, a <code>JLabel</code> for the subtitle, three fields of type <code>MenuButton</code> 
+ * the buttons (Browse, Search, and Exit).
  */
 public class MenuPanel extends JPanel {
+    /**
+     * The factor used to calculate star density based on the panel's dimensions.
+     * Higher values result in more stars being drawn.
+     */
+    private static final double STAR_DENSITY_FACTOR = 0.001;
+    /**
+     * The minimum font size for the title label. Ensures that the title does not
+     * get too small when the window width is small.
+     */
+    private static final int MIN_TITLE_SIZE = 10;
+     /**
+     * The minimum font size for the subtitle label. Ensures that the subtitle does not
+     * get too small when the window width is small.
+     */
+    private static final int MIN_SUBTITLE_SIZE = 8;
+    /**
+     * The minimum font size for the buttons. Ensures that buttons do not become too small
+     * when the window width is small.
+     */
+    private static final int MIN_BUTTON_FONT_SIZE = 8;
+    /**
+     * The color used for the title text. A light grey color.
+     */
+    private static final Color TITLE_COLOR = new Color(180, 180, 190);
+    /**
+     * The color used for the subtitle text. A light bluish color.
+     */
+    private static final Color SUBTITLE_COLOR = new Color(200, 200, 255);
+    /**
+     * The font used for all buttons. 
+     */
+    private static final String PRIMARY_FONT = "SansSerif";
+    
+    /** An array of colors used to render randomly generated stars. */
     private static final Color[] STAR_COLORS = {
             new Color(255, 255, 255),   // White
             new Color(200, 200, 255),   // Bluish white
@@ -55,7 +93,7 @@ public class MenuPanel extends JPanel {
      */
     private JLabel createTitleLabel() {
         JLabel label = new JLabel("SPACE ENCYCLOPEDIA", SwingConstants.CENTER);
-        label.setForeground(new Color(180, 180, 190));
+        label.setForeground(TITLE_COLOR);
         return label;
     }
     /**
@@ -64,7 +102,7 @@ public class MenuPanel extends JPanel {
      */
     private JLabel createSubtitleLabel() {
         JLabel label = new JLabel("Welcome! Let's Explore the Universe", SwingConstants.CENTER);
-        label.setForeground(new Color(200, 200, 255));
+        label.setForeground(SUBTITLE_COLOR );
         return label;
     }
     
@@ -125,14 +163,14 @@ public class MenuPanel extends JPanel {
      * @param containerWidth the current width of the container
      */
     private void adjustComponentSizes(int containerWidth) {
-        int titleSize = Math.max(10, containerWidth / 20);
-        int subtitleSize = Math.max(8, containerWidth / 50);
-        int buttonSize = Math.max(10, containerWidth / 60);
+        int titleSize = Math.max(MIN_TITLE_SIZE , containerWidth / 20);
+        int subtitleSize = Math.max(MIN_SUBTITLE_SIZE , containerWidth / 50);
+        int buttonSize = Math.max(MIN_BUTTON_FONT_SIZE , containerWidth / 60);
 
-        title.setFont(new Font("Segoi UI", Font.BOLD, titleSize));
-        subtitle.setFont(new Font("Segoi UI", Font.PLAIN, subtitleSize));
+        title.setFont(new Font(PRIMARY_FONT, Font.BOLD, titleSize));
+        subtitle.setFont(new Font(PRIMARY_FONT, Font.PLAIN, subtitleSize));
 
-        Font buttonFont = new Font("Segoi UI", Font.BOLD, buttonSize);
+        Font buttonFont = new Font(PRIMARY_FONT, Font.BOLD, buttonSize);
         browseBtn.setFont(buttonFont);
         searchBtn.setFont(buttonFont);
         exitBtn.setFont(buttonFont);
@@ -164,7 +202,7 @@ public class MenuPanel extends JPanel {
      * @param g2d the Graphics2D context used for drawing
      */
     private void paintStars(Graphics2D g2d) {
-        int starCount = (int)(getWidth() * getHeight() * 0.001); // Density based on size
+        int starCount = (int)(getWidth() * getHeight() * STAR_DENSITY_FACTOR); // Density based on size
 
         for (int i = 0; i < starCount; i++) {
             Color starColor = STAR_COLORS[(int)(Math.random() * STAR_COLORS.length)];

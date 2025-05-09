@@ -71,43 +71,28 @@ public class DataManager {
         }
         list.add(pos, newObj);
     }
+    public CelestialBody findCelestialBodyByName(String name) {
+        if (name == null || name.trim().isEmpty())
+            return null;
 
-/* Finds a planet by name, ignoring case.
-     * @param name the name of the planet
-     * @return the planet if found, or null if not
-     */
-    public Planet findPlanetByName(String name) {
-        for (Planet planet : planets) {
-            if (planet.getName().equalsIgnoreCase(name)) {
-                return planet;
-            }
-        }
-        return null;
-    }
-/* Finds a star by name, ignoring case.
-     * @param name the name of the star
-     * @return the star if found, or null if not
-     */
-    public Star findStarByName(String name) {
-        for (Star star : stars) {
-            if (star.getName().equalsIgnoreCase(name)) {
+        // Search in stars
+        for (Star star : stars)
+            if (star.getName().equalsIgnoreCase(name.trim()))
                 return star;
-            }
-        }
-        return null;
-    }
-/* Finds a galaxy by name, ignoring case.
-     * @param name the name of the galaxy
-     * @return the galaxy if found, or null if not
-     */
-    public Galaxy findGalaxyByName(String name) {
-        for (Galaxy galaxy : galaxies) {
-            if (galaxy.getName().equalsIgnoreCase(name)) {
+
+        // Search in planets
+        for (Planet planet : planets)
+            if (planet.getName().equalsIgnoreCase(name.trim()))
+                return planet;
+
+        // Search in galaxies
+        for (Galaxy galaxy : galaxies)
+            if (galaxy.getName().equalsIgnoreCase(name.trim()))
                 return galaxy;
-            }
-        }
+
         return null;
     }
+    
     /* Loads celestial objects from a data file or creates and saves sample data if the file does not exist.*/
     private void loadData() {
         if (!new File(DATA_FILE).exists()) {

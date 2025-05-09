@@ -3,12 +3,21 @@ package am.aua.space_encyclopedia.core;
    * Represents a star in the space encyclopedia.
    * A star is a luminous sphere of plasma held together by gravity and undergoes nuclear fusion.
    * This class extends CelestialBody and adds attributes like color, luminosity, and size.
- */
+   * <p>
+   * An object of type {@code Star} contains:
+   * <ul>
+   *   <li>{@link #color} - A field of type {@link String} representing the visual color of the star.</li>
+   *   <li>{@link #luminosity} - A field of type {@link double} representing the luminosity of the star relative to the Sun.</li>
+   *   <li>{@link #size} - A field of type {@link double} representing the size of the star relative to the Sun.</li>
+   * </ul>
+   */
 public class Star extends CelestialBody {
-      public static final double SUN_MASS_KG = 1.989e30; // in kg
-      public static final double SUN_ABSOLUTE_MAGNITUDE = 4.83; // in V band
-      public static final double SUN_LIFESPAN = 10;  // in billion years
-      
+      /** The mass of the Sun in kilograms. */
+      public static final double SUN_MASS_KG = 1.989e30; 
+      /** The absolute magnitude of the Sun in the V band. */
+      public static final double SUN_ABSOLUTE_MAGNITUDE = 4.83; 
+      /** The expected lifespan of the Sun in billion years.*/
+      public static final double SUN_LIFESPAN = 10; 
       private String color;
       private double luminosity;  //relative to the Sun
       private double size;       //relative to the Sun

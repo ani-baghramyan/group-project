@@ -12,7 +12,6 @@ import java.awt.event.MouseEvent;
 public class MenuButton extends JButton {
     private static final Color BUTTON_COLOR = new Color(70, 70, 120);
     private static final Color HOVER_COLOR = new Color(90, 90, 140);
-   // private static final Dimension BUTTON_SIZE = new Dimension(100, 60);
 
  /**
      * Constructs a {@code MenuButton} with the specified text label.
@@ -61,7 +60,9 @@ public class MenuButton extends JButton {
      */
     @Override
     protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g.create();
+        Graphics2D g2 = (Graphics2D) g;
+
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         if (getModel().isPressed()) {
             g2.setColor(HOVER_COLOR.darker());
@@ -72,7 +73,6 @@ public class MenuButton extends JButton {
         }
 
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        super.paintComponent(g2);
-        g2.dispose();
+        super.paintComponent(g);
     }
 }

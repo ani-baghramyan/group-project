@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 import am.aua.space_encyclopedia.core.*;
 
-/*The DataManager class manages collections of celestial objects (Stars, Planets, Galaxies), handles their persistence to and from a text file, and provides search and add functionality.
+/**
+ * The DataManager class manages collections of celestial objects (Stars, Planets, Galaxies), handles their persistence to and from a text file, and provides search and add functionality.
  */
 
 public class DataManager {
@@ -13,52 +14,59 @@ public class DataManager {
     private ArrayList<Star> stars;
     private ArrayList<Planet> planets;
     private ArrayList<Galaxy> galaxies;
-/* Constructs a DataManager and loads data from file or creates sample data if the file does not exist.*/
+/** Constructs a DataManager and loads data from file or creates sample data if the file does not exist.*/
     public DataManager() {
         stars = new ArrayList<>();
         planets = new ArrayList<>();
         galaxies = new ArrayList<>();
         loadData();
     }
-    /*Returns the list of all stars.
+    /**
+      *Returns the list of all stars.
      * @return list of stars
      */
     public ArrayList<Star> getStars() {
         return stars;
     }
-    /* Returns the list of all planets.
+    /**
+    *Returns the list of all planets.
      * @return list of planets
      */
     public ArrayList<Planet> getPlanets() { 
         return planets; 
     }
-    /* Returns the list of all galaxies.
+    /**
+    *Returns the list of all galaxies.
      * @return list of galaxies
      */
     public ArrayList<Galaxy> getGalaxies() {
         return galaxies;
     }
 
-    /*Adds a star to the collection in sorted order based on natural ordering.
+    /**
+    *Adds a star to the collection in sorted order based on natural ordering.
      * @param newStar the star to add
      */
     public void addStar(Star newStar) {
      insertInOrder(stars, newStar);
     }
-/* Adds a planet to the collection in sorted order based on natural ordering.
+/**
+*Adds a planet to the collection in sorted order based on natural ordering.
      * @param newPlanet the planet to add
      */
     
     public void addPlanet(Planet newPlanet) {
         insertInOrder(planets, newPlanet);
     }
-/* Adds a galaxy to the collection in sorted order based on natural ordering.
+/**
+*Adds a galaxy to the collection in sorted order based on natural ordering.
      * @param newGalaxy the galaxy to add
      */
     public void addGalaxy(Galaxy newGalaxy) {
         insertInOrder(galaxies, newGalaxy);
     }
-    /*Inserts an object into the given list maintaining ascending order using compareTo().
+    /**
+    *Inserts an object into the given list maintaining ascending order using compareTo().
      * @param list - the list to insert into
      * @param newObj the object to insert
      * @param <T> - the type of celestial object
@@ -93,7 +101,8 @@ public class DataManager {
         return null;
     }
     
-    /* Loads celestial objects from a data file or creates and saves sample data if the file does not exist.*/
+    /**
+    *Loads celestial objects from a data file or creates and saves sample data if the file does not exist.*/
     private void loadData() {
         if (!new File(DATA_FILE).exists()) {
             System.out.println("Creating and loading sample celestial objects...");
@@ -120,7 +129,8 @@ public class DataManager {
         System.out.println("Error loading data from " + DATA_FILE + ": " + e.getMessage());
     }
     }
-    /*Parses a line of text from the data file and converts it into a celestial object.
+    /**
+    *Parses a line of text from the data file and converts it into a celestial object.
      * @param line the line to parse
      * @return the parsed CelestialBody object, or null if invalid
      */
@@ -171,13 +181,17 @@ public class DataManager {
             return null;
         }
     }
-    /*Creates initial sample data (Sun, Earth, Milky Way) and adds them to the respective lists.*/
+    /**
+    *Creates initial sample data (Sun, Earth, Milky Way) and adds them to the respective lists.
+    */
     private void createSampleData() {
         addStar(new Star("Sun",0.0000158,1.989e30,5778,"Yellow Dwarf","Yellow",1.0,1.0 ));
         addPlanet(new Planet("Earth", 0.0000158, 5.972e24, 288, "Terrestrial", "Nitrogen-Oxygen", 1, "Rocky with water", 6371));
         addGalaxy(new Galaxy("Milky Way",0.0,1.5e42,0,"Spiral", 250_000_000_000L,105700.0,13.51));
     }
-/*Saves all celestial objects to the data file in comma-separated format.*/
+/**
+*Saves all celestial objects to the data file in comma-separated format.
+*/
     public void saveData() {
         try (PrintWriter writer = new PrintWriter(new FileWriter(DATA_FILE))) {
             for (Star star : stars) {

@@ -2,16 +2,16 @@ package am.aua.space_encyclopedia.core;
 
 /**
  * Represents a general celestial body in space—like a star, planet, or galaxy.
- * This is an abstract class, so you can't create a generic CelestialBody directly instead, you extend this class to build more specific objects. 
+ * This is an abstract class, so you can't create a generic <code>CelestialBody</code> directly. Instead, you extend this class to build more specific objects. 
  * It includes shared properties such as name, distance from Earth, mass, temperature, and type. It also defines behavior that all celestial bodies should follow.
  * <p>
- * An object of type {@code CelestialBody} contains:
+ * An object of type <code>CelestialBody</code> contains:
  * <ul>
- *   <li>{@link #name} - A field of type {@link String} representing the name of the celestial body.</li>
- *   <li>{@link #distanceFromEarth} - A field of type {@link double} representing the distance from Earth in light-years.</li>
- *   <li>{@link #mass} - A field of type {@link double} representing the mass of the celestial body in kilograms.</li>
- *   <li>{@link #temperature} - A field of type {@link double} representing the temperature of the celestial body in Kelvin.</li>
- *   <li>{@link #type} - A field of type {@link String} representing the type of the celestial body (e.g., "Star", "Planet").</li>
+ *   <li><code>name</code> - A field of type <code>String</code> representing the name of the celestial body.</li>
+ *   <li><code>distanceFromEarth</code> - A field of type <code>double</code> representing the distance from Earth in light-years.</li>
+ *   <li><code>mass</code> - A field of type <code>double</code> representing the mass of the celestial body in kilograms.</li>
+ *   <li><code>temperature</code> - A field of type <code>double</code> representing the temperature of the celestial body in Kelvin.</li>
+ *   <li><code>type</code> - A field of type <code>String</code> representing the type of the celestial body (e.g., "Star", "Planet").</li>
  * </ul>
  */
 public abstract class CelestialBody implements Comparable<CelestialBody>{
@@ -71,30 +71,35 @@ public CelestialBody(CelestialBody other) {
     this.type = other.type;
 }
     /**
-    *@return the name of this celestial body 
-    */
+     * Gets the name of this celestial body.
+     * @return the name of this celestial body 
+     */
     public String getName() {
         return name;
     }
 /**
+* Gets the distance from Earth.
 *@return how far this body is from Earth, in light years
 */
     public double getDistanceFromEarth() {
         return distanceFromEarth;
     }
 /**
-    *@return the mass of this body in kilograms 
-*/
+ * Gets the mass of the celestial body.
+ *@return the mass of this body in kilograms 
+ */
     public double getMass(){
         return mass;
     }
-/**
+ /**
+   * Gets the temperature of the celestial body.
    *@return the temperature in Kelvin 
-*/
+  */
     public double getTemperature(){
         return temperature;
     }
 /**
+   * Gets the type of celestial body.
    *@return the type of this object (like "Star", "Planet", etc.)
 */
     public String getType() {

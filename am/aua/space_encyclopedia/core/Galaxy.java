@@ -2,33 +2,33 @@ package am.aua.space_encyclopedia.core;
 import java.util.ArrayList;
 
 /**
- * Represents a galaxy in the space encyclopedia.
- * A galaxy is a massive system consisting of stars, gas, dust, and dark matter—held together by gravity.
- * This class extends the CelestialBody class and adds galaxy-specific attributes like number of stars, diameter, and age.
+   * Represents a galaxy in the space encyclopedia.
+   * A galaxy is a massive system consisting of stars, gas, dust, and dark matter—held together by gravity.
+   * This class extends the CelestialBody class and adds galaxy-specific attributes like number of stars, diameter, and age.
  */
 
 public class Galaxy extends CelestialBody {
-    /**
+/**
     *Constant to convert light-years to meters. Useful for physical calculations.
-    */
+*/
     public static final double LIGHT_YEAR_IN_METERS = 9.461e15;
     
     private long numberOfStars;
     private double diameter;
     private double age;
 
-     /**
+/**
      * Constructs a new Galaxy with all necessary physical and descriptive attributes.
-     * @param name - the name of the galaxy
-     * @param distanceFromEarth - distance from Earth in light-years
-     * @param mass - the galaxy's total mass in kilograms
-     * @param temperature - average temperature in Kelvin
-     * @param type - type/classification (e.g., "Spiral", "Elliptical")
-     * @param numberOfStars - approximate number of stars
-     * @param diameter - diameter in light-years
-     * @param age - age in billions of years
+     * @param name  the name of the galaxy
+     * @param distanceFromEarth  distance from Earth in light-years
+     * @param mass  the galaxy's total mass in kilograms
+     * @param temperature  average temperature in Kelvin
+     * @param type  type/classification (e.g., "Spiral", "Elliptical")
+     * @param numberOfStars  approximate number of stars
+     * @param diameter  diameter in light-years
+     * @param age  age in billions of years
      * @throws IllegalArgumentException if any value is invalid (e.g., negative age or zero diameter)
-     */
+*/
     public Galaxy(String name, double distanceFromEarth, double mass, double temperature, String type,
               long numberOfStars, double diameter, double age) {
         super(name, distanceFromEarth, mass, temperature, type);
@@ -46,12 +46,12 @@ public class Galaxy extends CelestialBody {
     
     }
 
-      /**
+/**
      * Copy constructor for Galaxy.
      * Creates a new instance using values from another Galaxy object.
      * @param other the Galaxy to copy
      * @throws NullPointerException if the input Galaxy is null
-     */
+*/
     public Galaxy(Galaxy other) {
         super(other.getName(), other.getDistanceFromEarth(), other.getMass(), other.getTemperature(), other.getType());
         if (other == null)
@@ -62,28 +62,28 @@ public class Galaxy extends CelestialBody {
 }
    
 /**
-*@return estimated number of stars in this galaxy 
+     *@return estimated number of stars in this galaxy 
 */
     public long getNumberOfStars() {
         return numberOfStars;
     }
-    /**
+/**
     *@return the diameter of the galaxy in light-years
-    */
+*/
     public double getDiameter() {
         return diameter;
     }
-    /**
+/**
     *@return the age of the galaxy in billions of years 
-    */
+*/
     public double getAge() {
         return age;
     }
     
-     /**
+/**
      * Provides a complete string representation of the galaxy, including inherited and extra attributes.
      * @return formatted string describing the galaxy
-     */
+*/
     @Override
     public String toString() {
         return String.format(
@@ -99,11 +99,11 @@ public class Galaxy extends CelestialBody {
 
     }
 
-    /**
+/**
      * Compares two galaxies by their name (case-insensitive).
      * @param otherObject the object to compare with
      * @return true if the names match and it's also a Galaxy
-     */
+*/
     @Override
     public boolean equals(Object otherObject){
         if (otherObject == null)
@@ -119,8 +119,8 @@ public class Galaxy extends CelestialBody {
      * Estimates how densely stars are packed in this galaxy.
      * Calculation assumes a spherical volume.
      * @return stars per cubic light-year
-     * @throws ArithmeticException - if the galaxy volume is zero or invalid
-     */
+     * @throws ArithmeticException  if the galaxy volume is zero or invalid
+*/
     
     public double estimateStarDensity() {
         double radiusLY = diameter / 2.0; // diameter in light-years
@@ -133,8 +133,8 @@ public class Galaxy extends CelestialBody {
      * Calculates the escape velocity at the edge of the galaxy.
      * Uses classical mechanics (v = sqrt(2GM/R)).
      * @return escape velocity in meters per second
-     * @throws ArithmeticException - if the radius is zero or negative
-     */
+     * @throws ArithmeticException  if the radius is zero or negative
+*/
     
    public double calculateEscapeVelocity() {
     double radiusMeters = (diameter * LIGHT_YEAR_IN_METERS) / 2;
@@ -147,7 +147,7 @@ public class Galaxy extends CelestialBody {
      * Returns additional interesting facts about the galaxy.
      * Includes calculated values like star density and escape velocity.
      * @return formatted string with galaxy-specific facts
-     */
+*/
     
     @Override
     public String showFacts(){

@@ -3,6 +3,14 @@ package am.aua.space_encyclopedia.core;
    * Represents a planet in the space encyclopedia.
    * A planet is a celestial body that orbits a star, has cleared its orbit, and possesses characteristics like an atmosphere, surface, and moons.
    * This class extends the CelestialBody class and adds planet-specific attributes.
+   * <p>
+   * An object of type {@code Planet} contains:
+   * <ul>
+   *   <li>{@link #atmosphericComposition} - A field of type {@link String} representing the composition of the planet's atmosphere.</li>
+   *   <li>{@link #numberOfMoons} - A field of type {@link int} representing the number of natural satellites (moons) orbiting the planet.</li>
+   *   <li>{@link #surfaceConditions} - A field of type {@link String} representing a description of the surface conditions on the planet (e.g., rocky, gaseous).</li>
+   *   <li>{@link #radius} - A field of type {@link double} representing the radius of the planet in meters.</li>
+   * </ul>
  */
 
 public class Planet extends CelestialBody{

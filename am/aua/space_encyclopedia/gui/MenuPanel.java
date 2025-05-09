@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- * The code>MenuPanel</code>  class represents the main menu panel
+ * The <code>MenuPanel</code>  class represents the main menu panel
  * of the Space Encyclopedia application. It displays the title,
  * subtitle, and three action buttons: Browse, Search, and Exit.
  * It also features a gradient space-themed background with randomly

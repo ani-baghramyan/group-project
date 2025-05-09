@@ -6,13 +6,13 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * {@code DetailsPanel} is a custom JPanel that displays detailed information
- * about a selected {@link CelestialBody}. It includes a styled header,
+ * <code>DetailsPanel</code> is a custom JPanel that displays detailed information
+ * about a selected <code>CelestialBody</code>. It includes a styled header,
  * a back button with hover effect, and a scrollable text area to show content.
- * An object of type {@code DetailsPanel} contains:
+ * An object of type <code>DetailsPanel</code> contains:
  * <ul>
- *   <li>A field of type {@link ActionListener} to handle the back navigation action.</li>
- *   <li>A field of type {@link JTextArea} to display the details of the celestial body.</li>
+ *   <li>A field of type <code>ActionListener</code> to handle the back navigation action.</li>
+ *   <li>A field of type <code>JTextArea</code> to display the details of the celestial body.</li>
  * </ul>
  */
 

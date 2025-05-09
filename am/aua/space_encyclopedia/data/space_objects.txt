@@ -56,11 +56,17 @@ Planet,OGLE-2005-BLG-390Lb,21500.000000,5.500e+24,50.00,Terrestrial,Unknown,0,Co
 Planet,LHS 1140 b,41.000000,6.600e+24,230.00,Super-Earth,Unknown,0,Potentially habitable,11300.00
 Planet,TOI 700 d,101.000000,5.720e+24,268.00,Terrestrial,Unknown,0,In habitable zone,7200.00
 Planet,Gliese 667 Cc,22.100000,6.000e+24,277.00,Super-Earth,Carbon Dioxide,0,Potential liquid water,9100.00
-Planet,55 Cancri e,40.000000,8.080e+24,2400.00,Super-Earth,Unknown,0,Lava-covered surface,9900.00
-Planet,Trappist-1e,39.000000,4.800e+24,251.00,Terrestrial,Unknown,0,Potentially habitable,5800.00
 Planet,PSR B1257+12 B,2300.000000,4.300e+24,280.00,Terrestrial,Unknown,0,Orbits a pulsar,2500.00
-Planet,TOI-700 d,101.000000,5.720e+24,268.00,Terrestrial,Unknown,0,Within habitable zone,6900.00
-Planet,GJ 1214 b,42.000000,1.880e+25,393.00,Mini-Neptune,Hydrogen-Helium-Water Vapor,0,Thick steamy atmosphere,15000.00
+Planet,K2-18b,124.000000,8.600e+24,284.00,Mini-Neptune,Hydrogen-Water Vapor,0,Potentially habitable with vapor atmosphere,14000.00
+Planet,Proxima b,4.240000,1.270e+25,234.00,Terrestrial,Unknown,0,Orbiting Proxima Centauri in habitable zone,7200.00
+Planet,Kepler-1649c,300.000000,5.000e+24,240.00,Terrestrial,Unknown,0,Earth-sized and temperate,6500.00
+Planet,Kapteyn b,13.000000,4.800e+24,205.00,Super-Earth,Unknown,0,Old planet with rocky features,7900.00
+Planet,HR 8799 c,129.000000,1.000e+27,1100.00,Gas Giant,Hydrogen-Helium,0,Directly imaged exoplanet,130000.00
+Planet,Kepler-10b,560.000000,3.300e+24,1833.00,Terrestrial,Unknown,0,Hot rocky world,5400.00
+Planet,TRAPPIST-1d,40.000000,3.400e+24,282.00,Terrestrial,Unknown,0,Potentially habitable with mild temps,5900.00
+Planet,Kepler-20e,950.000000,3.000e+24,1040.00,Terrestrial,Unknown,0,Very hot rocky exoplanet,5600.00
+Planet,HD 106906 b,650.000000,1.000e+29,150.00,Gas Giant,Hydrogen-Helium,0,Massive and distant,90000.00
+Planet,Wolf 1061c,13.800000,5.100e+24,223.00,Super-Earth,Unknown,0,Potential for liquid water,6700.00
 Galaxy,Andromeda,2537000.000000,1.230e+42,0.00,Spiral,1000000000000,220000.00,10.00
 Galaxy,Milky Way,0.000000,1.500e+42,0.00,Spiral,250000000000,105700.00,13.51
 Galaxy,Triangulum,2730000.000000,5.000e+41,0.00,Spiral,40000000000,60000.00,12.00

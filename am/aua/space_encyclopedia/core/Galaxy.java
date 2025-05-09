@@ -5,6 +5,13 @@ import java.util.ArrayList;
    * Represents a galaxy in the space encyclopedia.
    * A galaxy is a massive system consisting of stars, gas, dust, and dark matter—held together by gravity.
    * This class extends the CelestialBody class and adds galaxy-specific attributes like number of stars, diameter, and age.
+   * <p>
+   * An object of type {@code Galaxy} contains:
+   * <ul>
+   *   <li>{@link #numberOfStars} - A field of type {@link long} representing the estimated number of stars in the galaxy.</li>
+   *   <li>{@link #diameter} - A field of type {@link double} representing the diameter of the galaxy in light-years.</li>
+   *   <li>{@link #age} - A field of type {@link double} representing the age of the galaxy in billions of years.</li>
+   * </ul>
  */
 
 public class Galaxy extends CelestialBody {

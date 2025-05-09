@@ -69,18 +69,21 @@ public class Galaxy extends CelestialBody {
 }
    
 /**
+     *Gets the estimated number of stars in this galaxy.
      *@return estimated number of stars in this galaxy 
 */
     public long getNumberOfStars() {
         return numberOfStars;
     }
 /**
+    *Gets the diameter of the galaxy measured in light-years.
     *@return the diameter of the galaxy in light-years
 */
     public double getDiameter() {
         return diameter;
     }
 /**
+    * Gets the age of the galaxy in billions of years.
     *@return the age of the galaxy in billions of years 
 */
     public double getAge() {

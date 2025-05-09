@@ -5,16 +5,17 @@ import java.util.ArrayList;
 import am.aua.space_encyclopedia.core.*;
 
 /**
- * The DataManager class manages collections of celestial objects (Stars, Planets, Galaxies), 
+ * The <code>DataManager</code> class manages collections of celestial objects 
+ * (<code>Star</code>s, <code>Planet</code>s, <code>Galaxy</code>s), 
  * handles their persistence to and from a text file, and provides search and add functionality.
-  * <p>
- * An object of type {@code DataManager} contains:
+ * <p>
+ * An object of type <code>DataManager</code> contains:
  * <ul>
- *   <li>Fields of type {@link ArrayList} for storing collections of stars, planets, and galaxies in the system:
+ *   <li>Fields of type <code>ArrayList</code> for storing collections in the system:
  *     <ul>
- *       <li>{@link #stars} - List of {@link Star} objects representing the stars in the system.</li>
- *       <li>{@link #planets} - List of {@link Planet} objects representing the planets in the system.</li>
- *       <li>{@link #galaxies} - List of {@link Galaxy} objects representing the galaxies in the system.</li>
+ *       <li><code>stars</code> - List of <code>Star</code> objects</li>
+ *       <li><code>planets</code> - List of <code>Planet</code> objects</li>
+ *       <li><code>galaxies</code> - List of <code>Galaxy</code> objects</li>
  *     </ul>
  *   </li>
  * </ul>
@@ -103,6 +104,11 @@ public class DataManager {
         }
         list.add(pos, newObj);
     }
+ /**
+ * Searches for a celestial body by name across all collections (stars, planets, and galaxies).
+ * @param name The name of the celestial body to search for (must not be <code>null</code> or empty)
+ * @return The found <code>CelestialBody</code> object, or <code>null</code> if not found
+ */
     public CelestialBody findCelestialBodyByName(String name) {
         if (name == null || name.trim().isEmpty())
             return null;

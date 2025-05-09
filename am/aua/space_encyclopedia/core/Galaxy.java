@@ -154,7 +154,7 @@ public class Galaxy extends CelestialBody {
         StringBuilder facts = new StringBuilder();
 
         facts.append("\nMORE GALACTIC FACTS:\n");
-        facts.append("- ").append(getName()).append(" is a fascinating galaxy!\n");
+        facts.append("\n- ").append(getName()).append(" is a fascinating galaxy!\n");
         facts.append(String.format("- Estimated Star Density: %.3f stars per cubic light-year\n", estimateStarDensity()));
         facts.append(String.format("- Escape Velocity (at edge): %.2f m/s\n", calculateEscapeVelocity()));
 

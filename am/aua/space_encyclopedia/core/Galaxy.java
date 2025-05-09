@@ -1,21 +1,23 @@
 package am.aua.space_encyclopedia.core;
 import java.util.ArrayList;
 
-/*
+/**
  * Represents a galaxy in the space encyclopedia.
  * A galaxy is a massive system consisting of stars, gas, dust, and dark matter—held together by gravity.
  * This class extends the CelestialBody class and adds galaxy-specific attributes like number of stars, diameter, and age.
  */
 
 public class Galaxy extends CelestialBody {
-    /*Constant to convert light-years to meters. Useful for physical calculations. */
+    /**
+    *Constant to convert light-years to meters. Useful for physical calculations.
+    */
     public static final double LIGHT_YEAR_IN_METERS = 9.461e15;
     
     private long numberOfStars;
     private double diameter;
     private double age;
 
-     /*
+     /**
      * Constructs a new Galaxy with all necessary physical and descriptive attributes.
      * @param name - the name of the galaxy
      * @param distanceFromEarth - distance from Earth in light-years
@@ -44,7 +46,7 @@ public class Galaxy extends CelestialBody {
     
     }
 
-      /*
+      /**
      * Copy constructor for Galaxy.
      * Creates a new instance using values from another Galaxy object.
      * @param other the Galaxy to copy
@@ -59,20 +61,26 @@ public class Galaxy extends CelestialBody {
         this.age = other.age;
 }
    
-/* @return estimated number of stars in this galaxy */
+/**
+*@return estimated number of stars in this galaxy 
+*/
     public long getNumberOfStars() {
         return numberOfStars;
     }
-    /* @return the diameter of the galaxy in light-years */
+    /**
+    *@return the diameter of the galaxy in light-years
+    */
     public double getDiameter() {
         return diameter;
     }
-    /* @return the age of the galaxy in billions of years */
+    /**
+    *@return the age of the galaxy in billions of years 
+    */
     public double getAge() {
         return age;
     }
     
-     /*
+     /**
      * Provides a complete string representation of the galaxy, including inherited and extra attributes.
      * @return formatted string describing the galaxy
      */
@@ -91,7 +99,7 @@ public class Galaxy extends CelestialBody {
 
     }
 
-    /*
+    /**
      * Compares two galaxies by their name (case-insensitive).
      * @param otherObject the object to compare with
      * @return true if the names match and it's also a Galaxy
@@ -121,7 +129,7 @@ public class Galaxy extends CelestialBody {
             throw new ArithmeticException("Galaxy volume must be greater than zero to estimate star density.");
         return numberOfStars / volume;
     }
-/*
+/**
      * Calculates the escape velocity at the edge of the galaxy.
      * Uses classical mechanics (v = sqrt(2GM/R)).
      * @return escape velocity in meters per second
@@ -135,7 +143,7 @@ public class Galaxy extends CelestialBody {
 
     return Math.sqrt((2 * G * getMass()) / radiusMeters);
 }
-/*
+/**
      * Returns additional interesting facts about the galaxy.
      * Includes calculated values like star density and escape velocity.
      * @return formatted string with galaxy-specific facts

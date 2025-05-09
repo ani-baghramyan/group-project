@@ -8,6 +8,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
+/**
+ * Represents the search panel UI of the Space Encyclopedia application.
+ * Allows users to search for celestial bodies by name and view results.
+ */
+
 public class SearchPanel extends JPanel {
 
     // Color constants
@@ -27,7 +32,12 @@ public class SearchPanel extends JPanel {
     private JTextField searchField;
     private JList<String> resultsList;
     private DefaultListModel<String> listModel;
-
+   /**
+     * Constructs a SearchPanel with the given data manager and action listeners.
+     * @param dataManager         the data source for celestial objects
+     * @param showMenuListener    listener for navigating back to the menu
+     * @param viewDetailsListener listener for viewing details of selected objects
+     */
     public SearchPanel(DataManager dataManager,
                        ActionListener showMenuListener,
                        ActionListener viewDetailsListener) {
@@ -40,7 +50,10 @@ public class SearchPanel extends JPanel {
         add(createHeaderPanel(), BorderLayout.NORTH);
         add(createContentPanel(), BorderLayout.CENTER);
     }
-
+  /**
+     * Creates the top panel containing the title and "Back to Menu" button.
+     * @return JPanel representing the header.
+     */
     private JPanel createHeaderPanel() {
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(HEADER_COLOR);
@@ -71,7 +84,10 @@ public class SearchPanel extends JPanel {
 
         return headerPanel;
     }
-
+/**
+     * Creates the content panel with search input, results list, and view button.
+     * @return JPanel containing the interactive search components.
+     */
     private JPanel createContentPanel() {
         JPanel contentPanel = new JPanel(new BorderLayout());
         contentPanel.setBackground(Color.WHITE);
@@ -136,7 +152,10 @@ public class SearchPanel extends JPanel {
 
         return contentPanel;
     }
-
+ /**
+     * Styles a JButton with consistent appearance.
+     * @param button the button to style
+     */
     private void styleButton(JButton button) {
         button.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         button.setForeground(Color.WHITE);
@@ -144,7 +163,12 @@ public class SearchPanel extends JPanel {
         button.setBorder(BorderFactory.createEmptyBorder(6, 16, 6, 16));
         button.setFocusPainted(false);
     }
-
+    
+/**
+     * Styles the search text field.
+     *
+     * @param field the text field to style
+     */
     private void styleTextField(JTextField field) {
         field.setFont(FONT);
         field.setBackground(LIST_BACKGROUND_COLOR);
@@ -153,14 +177,18 @@ public class SearchPanel extends JPanel {
                 BorderFactory.createEmptyBorder(8, 10, 8, 10)
         ));
     }
-
+/**
+     * Styles the results JList.
+     */
     private void styleResultsList() {
         resultsList.setFont(FONT);
         resultsList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         resultsList.setBackground(LIST_BACKGROUND_COLOR);
         resultsList.setForeground(Color.DARK_GRAY);
     }
-
+/**
+     * Performs a search using the entered text and displays results.
+     */
     public void performSearch() {
         String term = searchField.getText().trim();
         listModel.clear();
@@ -181,7 +209,14 @@ public class SearchPanel extends JPanel {
             listModel.addElement("No results found for " + term);
         }
     }
-
+    
+ /**
+     * Searches a specific category of celestial objects and adds matches to the list.
+     * @param term      the search term
+     * @param objects   the list of celestial bodies
+     * @param typeName  the category name (e.g., "Star", "Planet", etc.)
+     * @param <T>       a subclass of CelestialBody
+     */
     private <T extends CelestialBody> void searchCategory(String term, ArrayList<T> objects, String typeName) {
         String lowerTerm = term.toLowerCase();
         ArrayList<T> matchingObjects = new ArrayList<>();
@@ -201,7 +236,10 @@ public class SearchPanel extends JPanel {
             listModel.addElement("[" + typeName + "] " + obj.getName());
         }
     }
-
+/**
+     * Returns the name of the currently selected celestial body from the results list.
+     * @return the selected object name, or null if nothing is selected
+     */
     public String getSelectedObjectName() {
         if (resultsList == null || listModel == null || listModel.isEmpty()) {
             return null;

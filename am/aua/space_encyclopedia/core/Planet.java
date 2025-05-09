@@ -71,24 +71,28 @@ public class Planet extends CelestialBody{
     this.radius = other.radius;
 }
 /**
+     * Gets the planet's atmospheric composition.
      *@return the planet's atmospheric composition 
 */
   public String getAtmosphericComposition() {
     return atmosphericComposition;
   }
-/**
+/** 
+    * Gets the number of natural satellites (moons).
     *@return the number of natural satellites (moons) 
 */
   public int getNumberOfMoons() {
     return numberOfMoons;
   }
 /**
+   *Gets the description of the planet's surface conditions.
    *@return description of the planet’s surface conditions 
 */
   public String getSurfaceConditions() {
     return surfaceConditions;
   }
 /**
+   * Gets the planet's radius.
    *@return the planet's radius in meters 
 */
   public double getRadius(){

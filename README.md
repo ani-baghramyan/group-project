@@ -56,3 +56,11 @@ Manages all celestial object data:
 - Lina Margaryan
 - Ani Baghramyan
 
+### References
+https://stackoverflow.com/questions/72031081/how-to-set-a-gradient-background-to-the-form-intellij/72054719
+https://www.daniweb.com/programming/software-development/threads/124033/creating-hover-effect-for-jbutton
+https://www.geeksforgeeks.org/lambda-expressions-java-8/
+https://docs.oracle.com/en/java/javase/23/docs/api/java.desktop/java/awt/GridBagConstraints.html
+https://docs.oracle.com/javase/tutorial/uiswing/components/list.html
+https://docs.oracle.com/en/java/javase/23/docs/api/java.desktop/javax/swing/JOptionPane.html
+

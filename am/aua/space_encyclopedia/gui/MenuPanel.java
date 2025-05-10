@@ -111,9 +111,6 @@ public class MenuPanel extends JPanel {
      */
     private void setupLayout() {
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.weightx = 1;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(10, 10, 10, 10);
 
         gbc.gridy = 0;
@@ -134,7 +131,6 @@ public class MenuPanel extends JPanel {
         panel.setOpaque(false);
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.gridx = 0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(10, 50, 10, 50);
 
